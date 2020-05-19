@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Photos on JerryWu Blog</title>
+    <link>https://GengDeWu.github.io/tags/photos/</link>
+    <description>Recent content in Photos on JerryWu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 18 May 2020 21:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/tags/photos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>文章標題</title>
+      <link>https://GengDeWu.github.io/blog/test/</link>
+      <pubDate>Mon, 18 May 2020 21:30:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/test/</guid>
+      <description>Hello VIM
+   View this post on Instagram        #Talitha #Getty #yacht in #fjærland #fjærlandsfjorden #sognefjorden #mundal #norway #landscape #panorama #travel #instagoodmyphoto #justgoshoot #peoplescreatives #visualsoflife #photography #photoshoot #photodaily #photogram #instagood #picoftheday #fjærland #photooftheday #pentax #nrksf #sognavis</description>
+    </item>
+    
+    <item>
+      <title>How To Use Checklists To Improve Your UX</title>
+      <link>https://GengDeWu.github.io/blog/post-13/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/post-13/</guid>
+      <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</description>
+    </item>
+    
+  </channel>
+</rss>
