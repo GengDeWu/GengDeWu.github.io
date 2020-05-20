@@ -89,10 +89,7 @@
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mx-auto">
-        
-        <a href="/categories/vim"
-          class="text-primary">Vim</a>
+      <div class="col-lg-10 mx-auto">
         
         <h2>Visual studio with Vim</h2>
         <div class="mb-3 post-meta">
@@ -100,6 +97,11 @@
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
           <span>19 May 2020</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/vim"
+          class="text-primary">Vim</a>
+        
           
         </div>
         
@@ -114,7 +116,7 @@
 <li>其他功能</li>
 </ol>
 </blockquote>
-<h5 id="step1-how-to-start-">Step1. How to start ?</h5>
+<h4 id="1-how-to-start-">1. How to start ?</h4>
 <ol>
 <li>
 <p>進入 <a href="https://www.vim.org/">Vim 官網</a></p>
@@ -127,9 +129,110 @@
 </li>
 </ol>
 <p><img src="../../images/post/001-001.jpg" alt="image"></p>
-<h5 id="step2-choose-your-familiar-ide-example--visual-studio">Step2. Choose your familiar IDE (Example : Visual studio)</h5>
-<h5 id="step3-常用的功能">Step3. 常用的功能</h5>
-<h5 id="step4-其他功能">Step4. 其他功能</h5>
+<h4 id="2-choose-your-familiar-ide-example--visual-studio">2. Choose your familiar IDE (Example : Visual studio)</h4>
+<h4 id="3-常用的功能">3. 常用的功能</h4>
+<ol>
+<li>
+<p>刪除一行 - <code>dd</code></p>
+</li>
+<li>
+<p>進入編輯模式 - <code>i</code></p>
+</li>
+<li>
+<p>進入VISUAL模式 - <code>v</code></p>
+</li>
+<li>
+<p>進入VISUAL BLOCK模式 - <code>ctrl</code>(按鍵) + <code>v</code></p>
+</li>
+<li>
+<p>寫入(儲存) - <code>:w</code></p>
+</li>
+<li>
+<p>離開 - <code>:q</code></p>
+</li>
+<li>
+<p>不儲存強制離開 - <code>:q!</code></p>
+</li>
+<li>
+<p>paste模式，直接貼上文字時格式不會跑掉 - <code>:set paste</code></p>
+</li>
+<li>
+<p>顯示行數 - <code>:set nu</code></p>
+</li>
+<li>
+<p>設定一個tab等於四個空白長度 - <code>:set tabstop=4</code></p>
+</li>
+<li>
+<p>設定以後，使用tab鍵時會用空白取代(由tabstop決定) - <code>:set expandtab</code></p>
+</li>
+<li>
+<p>消除Highlight - <code>:noh</code></p>
+</li>
+<li>
+<p>範圍縮排(3到5行向右縮排，向左縮排用&lt;) - <code>:3,5&gt;</code></p>
+</li>
+<li>
+<p>將tab轉換成space - <code>:retab</code></p>
+</li>
+<li>
+<p>將檔案編碼轉成utf8 - <code>:set fileencoding=utf8</code></p>
+</li>
+<li>
+<p>另存新檔 - <code>:w myfilename</code></p>
+</li>
+<li>
+<p>開啟檔案 - <code>:e filename</code></p>
+</li>
+<li>
+<p>自動對齊 - <code>==</code></p>
+</li>
+<li>
+<p>移動到該行最前端 - <code>^</code></p>
+</li>
+<li>
+<p>移動到該行最末端 - <code>$</code></p>
+</li>
+<li>
+<p>移動到下一個單字的第一個字元 - <code>w</code></p>
+</li>
+<li>
+<p>移動到前一個單字的第一個字元 - <code>b</code></p>
+</li>
+<li>
+<p>移動到下一個單字的最後一個字元 - <code>e</code></p>
+</li>
+<li>
+<p>移動到下一個單字的最後一個字元(無視符號) - <code>E</code></p>
+</li>
+<li>
+<p>全選(gg為游標移動到最上方，v為切換成選擇模式，G是游標移動到最下方) - <code>ggvG</code></p>
+</li>
+<li>
+<p>游標移動到特定行數(移動到第三行) - <code>3G</code></p>
+</li>
+<li>
+<p>複製反白的區塊(需要在VISUAL模式) - <code>y</code></p>
+</li>
+<li>
+<p>剪下反白的區塊(需要在VISUAL模式) - <code>d</code></p>
+</li>
+<li>
+<p>複製游標所在的那行(需要在VISUAL模式) - <code>shift</code>(按鍵) + <code>y</code></p>
+</li>
+<li>
+<p>貼上 - <code>p</code></p>
+</li>
+<li>
+<p>回復 - <code>u</code></p>
+</li>
+<li>
+<p>自動完成 (需要在編輯模式) - <code>ctrl</code>(按鍵) + <code>p</code></p>
+</li>
+<li>
+<p>搜尋字串 - <code>/&lt;字串&gt;</code>：向下找、<code>?&lt;字串&gt;</code>：向上找</p>
+</li>
+</ol>
+<h4 id="4-其他功能">4. 其他功能</h4>
 
         </div>
 
