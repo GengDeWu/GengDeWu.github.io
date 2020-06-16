@@ -6,18 +6,18 @@
     <description>Recent content in Blogs on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 19 May 2020 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 21:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Visual studio with Vim</title>
-      <link>https://GengDeWu.github.io/blog/vim/</link>
-      <pubDate>Tue, 19 May 2020 21:00:00 +0800</pubDate>
+      <title>(CI)Jenkins整合SVN、SMTP自動化建置ASP.NET專案</title>
+      <link>https://GengDeWu.github.io/blog/jenkins_svn_smtp/</link>
+      <pubDate>Tue, 26 May 2020 21:00:00 +0800</pubDate>
       
-      <guid>https://GengDeWu.github.io/blog/vim/</guid>
-      <description>How to start ?</description>
+      <guid>https://GengDeWu.github.io/blog/jenkins_svn_smtp/</guid>
+      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
     </item>
     
   </channel>

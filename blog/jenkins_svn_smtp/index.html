@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A backend engineer world.">
+  <meta name="description" content="介紹如何使用Jenkins&#43;SVN&#43;SMTP建立了一個基本的CI(Continuous Integration)持續整合環境">
   <meta name="author" content="JerryWu">
   <meta name="generator" content="Hugo 0.70.0" />
 
@@ -87,112 +87,55 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      
-      <div class="col-lg-4">
-  
-  <div class="widget">
-    
-    <h4 class="widget-title">About Me</h4>
-    
-    <img src="https://GengDeWu.github.io/images/JerryWu-Picture.jpg" alt=""
-      class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-    
-    <p>A backend engineer world.</p>
-    <a href="https://GengDeWu.github.io/about/" class="btn btn-outline-primary">Know More</a>
-    
-  </div>
-  
-  <div class="widget">
-    <h4 class="widget-title">Category</h4>
-    <ul class="list-unstyled">
-      <li><a
-          href="/categories/go-language">Go language</a>
-      </li>
-      <li><a
-          href="/categories/vim">Vim</a>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="widget">
-    <h4 class="widget-title">Tag</h4>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/game">Game</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/html">Html</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/new">New</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/photos">Photos</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/python">Python</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/vim">Vim</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/visual-studio">Visual studio</a></li>
-    </ul>
-  </div>
-  
-  <div class="widget">
-    <h4 class="widget-title">Social</h4>
-    <ul class="list-inline social-links">
-      
-      <li class="list-inline-item"><a href="https://github.com/GengDeWu"><i class="ti-github"></i></a></li>
-      
-    </ul>
-  </div>
-  
-  
-</div>
-
-      
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-6 mb-4">
-    <article class="card">
+      <div class="col-lg-10 mx-auto">
         
-        <div class="card-body px-0">
-        
-        <a href="https://GengDeWu.github.io/blog/post-13/" class="h3 d-block my-3">How To Use Checklists To Improve Your UX</a>
+        <h2>(CI)Jenkins整合SVN、SMTP自動化建置ASP.NET專案</h2>
         <div class="mb-3 post-meta">
-            <span>By JerryWu</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2019-10-29</span>
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        <a href="/categories/go-language"
-            class="text-primary">Go language</a>
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>26 May 2020</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/jenkins"
+          class="text-primary">Jenkins</a>
         
-            
-        </div>
-        <p class="card-text">this is meta description</p>
-        <a href="https://GengDeWu.github.io/blog/post-13/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
           
         </div>
-      </div>
-      
-
-      
-      <div class="col-12 mt-5">
         
+        <div class="content mb-5">
+          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165ci-jenkinse695b4e59088svn-smtpe887aae58b95e58c96e5bbbae7bdaeasp-nete5b088e6a188-3f634f606f52">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/ci-jenkins%E6%95%B4%E5%90%88svn-smtp%E8%87%AA%E5%8B%95%E5%8C%96%E5%BB%BA%E7%BD%AEasp-net%E5%B0%88%E6%A1%88-3f634f606f52">Medium連結</a></h3>
 
+        </div>
 
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
 </section>
-
 
 
 
