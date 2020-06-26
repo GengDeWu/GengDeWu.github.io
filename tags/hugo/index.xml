@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Jerry&#39;s Blog</title>
-    <link>https://GengDeWu.github.io/blog/</link>
-    <description>Recent content in Blogs on Jerry&#39;s Blog</description>
+    <title>Hugo on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 26 Jun 2020 14:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://GengDeWu.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://GengDeWu.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,15 +17,6 @@
       <pubDate>Fri, 26 Jun 2020 14:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/github_hugo/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
-    </item>
-    
-    <item>
-      <title>(CI)Jenkins整合SVN、SMTP自動化建置ASP.NET專案</title>
-      <link>https://GengDeWu.github.io/blog/jenkins_svn_smtp/</link>
-      <pubDate>Tue, 26 May 2020 21:00:00 +0800</pubDate>
-      
-      <guid>https://GengDeWu.github.io/blog/jenkins_svn_smtp/</guid>
       <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
     </item>
     

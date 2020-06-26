@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 26 May 2020 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2020 14:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://GengDeWu.github.io/categories/hugo/</link>
+      <pubDate>Fri, 26 Jun 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Jenkins</title>
