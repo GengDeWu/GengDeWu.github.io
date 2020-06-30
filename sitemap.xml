@@ -4,12 +4,47 @@
   
   <url>
     <loc>https://GengDeWu.github.io/blog/</loc>
-    <lastmod>2020-06-26T14:00:00+08:00</lastmod>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/c#/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/categories/</loc>
-    <lastmod>2020-06-26T14:00:00+08:00</lastmod>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/debug/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/windows-service/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/categories/windows-service/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/blog/windows_service_debug/</loc>
+    <lastmod>2020-06-30T23:00:00+08:00</lastmod>
   </url>
   
   <url>
@@ -29,16 +64,6 @@
   
   <url>
     <loc>https://GengDeWu.github.io/categories/hugo/</loc>
-    <lastmod>2020-06-26T14:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/</loc>
-    <lastmod>2020-06-26T14:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/tags/</loc>
     <lastmod>2020-06-26T14:00:00+08:00</lastmod>
   </url>
   

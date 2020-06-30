@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 26 Jun 2020 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C#</title>
+      <link>https://GengDeWu.github.io/tags/c#/</link>
+      <pubDate>Tue, 30 Jun 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>https://GengDeWu.github.io/tags/debug/</link>
+      <pubDate>Tue, 30 Jun 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows Service</title>
+      <link>https://GengDeWu.github.io/tags/windows-service/</link>
+      <pubDate>Tue, 30 Jun 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/windows-service/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows Service on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/categories/windows-service/</link>
+    <description>Recent content in Windows Service on Jerry&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 30 Jun 2020 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/categories/windows-service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows Service in Debug Mode</title>
+      <link>https://GengDeWu.github.io/blog/windows_service_debug/</link>
+      <pubDate>Tue, 30 Jun 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/windows_service_debug/</guid>
+      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+    </item>
+    
+  </channel>
+</rss>
