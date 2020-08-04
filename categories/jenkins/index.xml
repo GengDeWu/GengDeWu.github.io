@@ -6,10 +6,19 @@
     <description>Recent content in Jenkins on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 26 May 2020 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 21:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/categories/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(CI)Jenkins整合Visual Code Grepper源碼檢測工具</title>
+      <link>https://GengDeWu.github.io/blog/jenkins_vcg/</link>
+      <pubDate>Sun, 26 Jul 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/jenkins_vcg/</guid>
+      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+    </item>
     
     <item>
       <title>(CI)Jenkins整合SVN、SMTP自動化建置ASP.NET專案</title>
