@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL Server on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/tags/sql-server/</link>
+    <description>Recent content in SQL Server on Jerry&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 08 Sep 2020 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(SQL Server)How to Find which user deleted the database in SQL Server</title>
+      <link>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database/</link>
+      <pubDate>Tue, 08 Sep 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database/</guid>
+      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+    </item>
+    
+    <item>
+      <title>(SQL Server) Microsoft SQL Server Error 18456</title>
+      <link>https://GengDeWu.github.io/blog/sql_server_error_18456/</link>
+      <pubDate>Tue, 08 Sep 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/sql_server_error_18456/</guid>
+      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+    </item>
+    
+  </channel>
+</rss>
