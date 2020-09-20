@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 08 Sep 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>javascript</title>
+      <link>https://GengDeWu.github.io/tags/javascript/</link>
+      <pubDate>Sun, 20 Sep 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hoisting</title>
+      <link>https://GengDeWu.github.io/tags/hoisting/</link>
+      <pubDate>Sun, 20 Sep 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/hoisting/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SQL Server</title>
