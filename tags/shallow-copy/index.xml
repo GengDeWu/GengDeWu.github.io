@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pass by value on Jerry&#39;s Blog</title>
-    <link>https://GengDeWu.github.io/tags/pass-by-value/</link>
-    <description>Recent content in Pass by value on Jerry&#39;s Blog</description>
+    <title>Shallow Copy on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/tags/shallow-copy/</link>
+    <description>Recent content in Shallow Copy on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://GengDeWu.github.io/tags/pass-by-value/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://GengDeWu.github.io/tags/shallow-copy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,15 +17,6 @@
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/javascript_shallowcopy_deepcopy_lodash/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
-    </item>
-    
-    <item>
-      <title>(JavaScript)傳值 Pass by value、傳址 Pass by reference以及Pass by sharing</title>
-      <link>https://GengDeWu.github.io/blog/javascript_passbyvalue_reference_sharing/</link>
-      <pubDate>Fri, 02 Oct 2020 17:00:00 +0800</pubDate>
-      
-      <guid>https://GengDeWu.github.io/blog/javascript_passbyvalue_reference_sharing/</guid>
       <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
     </item>
     
