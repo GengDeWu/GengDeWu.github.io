@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 20 Sep 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2020 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>javascript</title>
       <link>https://GengDeWu.github.io/tags/javascript/</link>
-      <pubDate>Sun, 20 Sep 2020 23:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Oct 2020 17:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pass by reference</title>
+      <link>https://GengDeWu.github.io/tags/pass-by-reference/</link>
+      <pubDate>Fri, 02 Oct 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/pass-by-reference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pass by sharing</title>
+      <link>https://GengDeWu.github.io/tags/pass-by-sharing/</link>
+      <pubDate>Fri, 02 Oct 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/pass-by-sharing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pass by value</title>
+      <link>https://GengDeWu.github.io/tags/pass-by-value/</link>
+      <pubDate>Fri, 02 Oct 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/pass-by-value/</guid>
       <description></description>
     </item>
     
