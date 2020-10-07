@@ -3,37 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://GengDeWu.github.io/blog/javascript_scope_closure/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/blog/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/categories/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/closure/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/javascript/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/categories/javascript/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/scope/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/</loc>
+    <lastmod>2020-10-07T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://GengDeWu.github.io/blog/javascript_shallowcopy_deepcopy_lodash/</loc>
     <lastmod>2020-10-03T00:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://GengDeWu.github.io/blog/</loc>
-    <lastmod>2020-10-03T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/categories/</loc>
-    <lastmod>2020-10-03T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://GengDeWu.github.io/tags/deep-copy/</loc>
-    <lastmod>2020-10-03T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/tags/javascript/</loc>
-    <lastmod>2020-10-03T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/categories/javascript/</loc>
-    <lastmod>2020-10-03T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/</loc>
     <lastmod>2020-10-03T00:00:00+08:00</lastmod>
   </url>
   
@@ -59,11 +79,6 @@
   
   <url>
     <loc>https://GengDeWu.github.io/tags/shallow-copy/</loc>
-    <lastmod>2020-10-03T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/tags/</loc>
     <lastmod>2020-10-03T00:00:00+08:00</lastmod>
   </url>
   
