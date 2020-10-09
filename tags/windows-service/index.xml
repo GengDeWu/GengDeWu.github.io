@@ -17,7 +17,7 @@
       <pubDate>Tue, 30 Jun 2020 23:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/windows_service_debug/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+      <description>本篇同步發佈在Medium平台上 Medium連結 因Windows Service無法直接運行Debug模式，若直接執行則會跳出以上錯誤訊息，但其實只需稍微調整也能讓Windows Service用Console Application的方式來執行，非常方便！</description>
     </item>
     
   </channel>

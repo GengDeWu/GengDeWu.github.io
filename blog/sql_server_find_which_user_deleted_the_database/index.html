@@ -107,7 +107,33 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165sql-server-how-to-find-which-user-deleted-the-database-in-sql-server-9c176028e1ea">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/sql-server-how-to-find-which-user-deleted-the-database-in-sql-server-9c176028e1ea">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*3u7Ua_bpjPIYH8TQ3N0zLA.png" alt="from https://www.ourtechideas.com/who-dropped-database/"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165sql-server-how-to-find-which-user-deleted-the-database-in-sql-server-9c176028e1ea">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/sql-server-how-to-find-which-user-deleted-the-database-in-sql-server-9c176028e1ea">Medium連結</a></h3>
+<p>在使用SQL Server資料庫時，若該環境是多人共用且大家都使用最高權限的帳號在操作資料庫時，就有機會發生資料庫被誤刪的情況，本篇僅能查出是哪位User(Login SQL Server Account)哪台Computer(HostName)做了刪除動作，要確保資料庫的安危還是需定期備份並且做好帳號的權限管理才是比較正確的做法。</p>
+<h3 id="前置動作產出creatdrop事件">前置動作(產出Creat/Drop事件)</h3>
+<ol>
+<li>
+<p>使用sa帳號登入SQL Server</p>
+</li>
+<li>
+<p>建立一個名稱為TestDropDB的資料庫</p>
+</li>
+<li>
+<p>使用test001帳號登入SQL Server</p>
+</li>
+<li>
+<p>刪除TestDropDB資料庫</p>
+</li>
+</ol>
+<h3 id="step1-確認sql-server-log路徑">Step1. 確認SQL Server Log路徑</h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/14704f8a4c6be338b0b37e2a283abcf7.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/2060/1*ktRDXvVbXaMzmCfJpbf9VA.png" alt=""></p>
+<h3 id="step2-顯示出要查詢的資料庫事件">Step2. 顯示出要查詢的資料庫事件</h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/63dd869d86485681844e6ce2769b7a3b.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*EZDtZkCUcdBS1dcNPiZEMA.png" alt=""></p>
+<p>以上就能很清楚的看到TestDropDB先被主機名稱為MSI、SQL Server帳號為sa的使用者建立，再被主機名稱為MSI、SQL Server帳號為test001的使用者給刪除。</p>
 
         </div>
 
@@ -177,5 +203,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

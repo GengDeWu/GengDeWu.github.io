@@ -107,7 +107,28 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-javascript-e6b5aee9bb9ee695b8e999b7e998b1-e8a7a3e6b1bae696b9e6b395-e250d9c9b1d3">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-javascript-%E6%B5%AE%E9%BB%9E%E6%95%B8%E9%99%B7%E9%98%B1-%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-e250d9c9b1d3">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*R7wKdsFNfmQwfH0biskJCQ.png" alt="from https://github.com/camsong/blog/issues/9"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-javascript-e6b5aee9bb9ee695b8e999b7e998b1-e8a7a3e6b1bae696b9e6b395-e250d9c9b1d3">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-javascript-%E6%B5%AE%E9%BB%9E%E6%95%B8%E9%99%B7%E9%98%B1-%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-e250d9c9b1d3">Medium連結</a></h3>
+<p>用Javascript來做加減乘除，如果是使用小數的話，跑出來的數字會非常奇特，主要問題在於Javascript運算是依循<a href="https://zh.wikipedia.org/wiki/IEEE_754">IEEE754</a>的規範，在運算時會轉換成二進制來計算數值，而浮點數在轉成二進制時會形成無窮迴圈，最後再轉換成十進制，進而產生運算誤差。</p>
+<p>舉個例子，0.1 + 0.2，在Javascript會是這樣子計算的。</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*sPuDs3zMWI6zlH3U782Mlw.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*IbmtsvEPETF_ooM1VxCzbw.png" alt=""></p>
+<h2 id="解決方法">解決方法</h2>
+<blockquote>
+<p><strong>1. 引入math.js</strong></p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*_UcYXLpwvrplmGfRgSRZ5g.png" alt="from https://mathjs.org/"></p>
+<p>詳細流程可以參考此篇文章
+<a href="https://cloud.tencent.com/developer/article/1647839"><strong>优秀的js拓展数学库math.js，解决精度问题</strong></a></p>
+<blockquote>
+<p><strong>2. 自訂加減乘除運算程式碼</strong></p>
+</blockquote>
+<p><strong>加.add()、減.sub()、乘.mul()、除.div()</strong></p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/f50bf805d5a12b88123844933e351f94.js"></script>
+
+<p>引入下方的javascript就能正常使用加減乘除運算啦!</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/0e256e5f1a491f6d141366849906aa37.js"></script>
+
 
         </div>
 
@@ -177,5 +198,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

@@ -107,7 +107,62 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-what-is-a-closure-e8a7a3e69e90e4bd9ce794a8e59f9fscope-e99689e58c85closure-62d6181b5ac">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-what-is-a-closure-%E8%A7%A3%E6%9E%90%E4%BD%9C%E7%94%A8%E5%9F%9Fscope-%E9%96%89%E5%8C%85closure-62d6181b5ac">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*NKTzq3RcxT00vwZ-WHCjuw.png" alt="from https://www.geekstrick.com/tag/lexical-scope/"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-what-is-a-closure-e8a7a3e69e90e4bd9ce794a8e59f9fscope-e99689e58c85closure-62d6181b5ac">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-what-is-a-closure-%E8%A7%A3%E6%9E%90%E4%BD%9C%E7%94%A8%E5%9F%9Fscope-%E9%96%89%E5%8C%85closure-62d6181b5ac">Medium連結</a></h3>
+<p>若還不清楚甚麼是<a href="https://medium.com/@jerrywu_3165/javascript-what-is-hoisting-in-javascript-b13fa8cc0e41">提升Hoisting</a>的話，可以先看看<a href="https://medium.com/@jerrywu_3165/javascript-what-is-hoisting-in-javascript-b13fa8cc0e41">之前的介紹</a>喔！因為文章內容有部分相關，所以必須先有 Execution Context 以及 Variable Object 的觀念後，會較能理解本篇的內容。</p>
+<h2 id="1-作用域scope">1. 作用域Scope</h2>
+<p>最常見的解釋是：<strong>作用域是一個變數的生存範圍，若於作用域之外將失去存取此變數的權限</strong>。</p>
+<p>馬上來看一個範例：</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/e3bd9f8fa964e6057949599a3beb06ec.js"></script>
+
+<p>在這段程式中，定義<em>outer</em>與<em>inner</em>兩個函式，並且都在自已的函式中宣告一個變數，但當我們執行到console.log <em>(y)</em> 時會出現Uncaught ReferenceError: y is not defined。</p>
+<p>這其實是因為 <em>y</em> 並不在<em>outer</em>的作用域中，所以他沒有存取 <em>y</em>變數的權限。但為什麼<em>inner</em>卻能夠存取到<em>outer</em>的 <em>x</em> 變數呢 ? 這是因為在<em>inner</em>的作用域中找不到 <em>x</em> 變數，所以JavaScript Engine試著向外尋找 <em>x</em> 變數，最後在<em>outer</em>中找到，最後便能印出1443的訊息！</p>
+<h2 id="靜態作用域與動態作用域">靜態作用域與動態作用域</h2>
+<p>JavaScript採用的是<strong>靜態作用域</strong>，函式的作用域在函式<strong>定義</strong>時就決定了。 而靜態作用域相對的是<strong>動態作用域，<strong>函式的作用 域是在函式</strong>呼叫</strong>的時候才決定的。 讓我們看一個例子來理解靜態作用域和動態作用域之間的區別：</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/9a817f174dde11bddd7b4b154577a1ea.js"></script>
+
+<p>上面的程式碼中：</p>
+<ul>
+<li>
+<p>第1行，定義了一個value，並賦值為1；</p>
+</li>
+<li>
+<p>第3~5行，宣告一個函式funB，函式的功能是列印 value 這個變數的值;</p>
+</li>
+<li>
+<p>第7~9行，宣告一個函式funA，函式內部重新建立了一個變數 value 這個變數賦值為2；在函式內部執行了 funB() 這個函式；</p>
+</li>
+<li>
+<p>第12行，執行 funA() 這個函式</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>JavaScript採用的是靜態作用域，以下僅是為了解析兩者流程上的差異！</strong></p>
+</blockquote>
+<p><strong>假設JavaScript採用靜態作用域，讓我們解析執行過程：</strong></p>
+<p>執行funB函式，首先從 funB 函式內部查詢是否有變數 value ，如果沒有就根據撰寫的位置，查詢上面一層的程式碼，我們發現value等於1，所以結果會印出 1。</p>
+<p><strong>假設JavaScript採用動態作用域，讓我們解析執行過程：</strong></p>
+<p>執行funB函式，依然是從 funB 函式內部查詢是否有區域性變數 value。如果沒有， 就從呼叫函式的作用域，也就是從 funA 函式內部 查詢 value 變數，所以結果會印出 2。</p>
+<h2 id="2-閉包closure">2. 閉包Closure</h2>
+<p>用一句話解釋閉包：<strong>閉包就是一個作用域，當今天一個函式在返回一個作用域的時候，變數就會被存在作用域的裡面，不會被回收</strong>。</p>
+<p>想必目前應該是有看沒有懂，讓我們用範例來解釋甚麼是<strong>返回一個作用域</strong>，甚麼是<strong>變數就會被存在作用域的裡面不會被回收</strong>！</p>
+<p>馬上來看以下的範例，下方的outer(666)這時候到底是甚麼呢？Console.log它結果馬上揭曉！</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/cefbed289457594a8d482716d3e1d942.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*Xe2UwlVE5PhHD1smWgiQnw.png" alt=""></p>
+<p>原來這時的outer(666)返回了一個inner函式[作用域]，剛剛的第一個問題返回一個作用域馬上獲得了解釋！</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/52c2c32c744f4a46958845622e4216e2.js"></script>
+
+<p>接下來，執行這段程式碼，神奇的事情發生了，那就是程式碼依舊輸出了 1443。</p>
+<p>神奇在哪裡？神奇在一個 function 執行完成以後本來會把所有相關的資源釋放掉，可是我 outer 函式已經執行結束了，照理來說變數 x, y的記憶體空間也會被釋放，但我呼叫 inner 函式的時候居然還存取得到 x, y！</p>
+<p>換句話說，x, y這兩個變數被「關在」inner 這個 function 裡面了，所以只要 inner 還存在的一天，x, y就永無安寧，只能一直被關 在裡面。</p>
+<p>而事情的主因就是我在 function 裡面回傳了一個 function，才能造成這種明明執行完畢卻還有東西被關住的現象，而這種情形就是一 般人所熟知的閉包，Closure。</p>
+<p><strong>以上便解釋了變數就會被存在作用域的裡面不會被回收！</strong></p>
+<p>將上述的例子套上解釋閉包的一句話，便能有豁然開朗的感覺！</p>
+<p><strong>閉包就是一個作用域，當今天一個函式<em>outer</em>在返回一個作用域<em>outer(666)<em>的時候，變數</em>x, y</em>就會被存在作用域的裡面，不會被 回收，因此可以正常輸出1433。</strong></p>
+<blockquote>
+<p>Note：JavaScript Engine的垃圾回收機制會釋放不再使用的記憶體，但閉包為了保留函式和存取其語彙範疇的能力，就會予以保留， 不做記憶體回收。因此 inner 仍然保留指向 outer 內層範疇的參考，這個參考就是閉包。</p>
+</blockquote>
 
         </div>
 
@@ -177,5 +232,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

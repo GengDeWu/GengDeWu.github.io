@@ -107,7 +107,59 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-e6b7bae68bb7e8b29dshallow-copy-e6b7b1e68bb7e8b29ddeep-copy-e4bdbfe794a8lodashe4be86e89995e79086e8b387e69699e590a7-b09214a61f59">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-%E6%B7%BA%E6%8B%B7%E8%B2%9Dshallow-copy-%E6%B7%B1%E6%8B%B7%E8%B2%9Ddeep-copy-%E4%BD%BF%E7%94%A8lodash%E4%BE%86%E8%99%95%E7%90%86%E8%B3%87%E6%96%99%E5%90%A7-b09214a61f59">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*yx8ngcEnYJs8d8FYum675Q.png" alt="from https://lodash.com/"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-e6b7bae68bb7e8b29dshallow-copy-e6b7b1e68bb7e8b29ddeep-copy-e4bdbfe794a8lodashe4be86e89995e79086e8b387e69699e590a7-b09214a61f59">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-%E6%B7%BA%E6%8B%B7%E8%B2%9Dshallow-copy-%E6%B7%B1%E6%8B%B7%E8%B2%9Ddeep-copy-%E4%BD%BF%E7%94%A8lodash%E4%BE%86%E8%99%95%E7%90%86%E8%B3%87%E6%96%99%E5%90%A7-b09214a61f59">Medium連結</a></h3>
+<blockquote>
+<p>在<a href="https://medium.com/@jerrywu_3165/javascript-%E5%82%B3%E5%80%BC-pass-by-value-%E5%82%B3%E5%9D%80-pass-by-reference%E4%BB%A5%E5%8F%8Apass-by-sharing-d3c52ca1c80b">前一篇</a>有提到pass by reference與pass by sharing的原理，那當我們要拷貝物件型別的資料時該如何實作呢，以下就讓我們來看看吧!</p>
+</blockquote>
+<h2 id="淺拷貝">淺拷貝</h2>
+<h3 id="array">Array</h3>
+<ol>
+<li>使用arr.slice(0)</li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/32d7feaadba1a1186c62a8d9e9b4aaf3.js"></script>
+
+<ol start="2">
+<li>使用展開運算子[…arr]</li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/ee55597a147bfd65fc7fd978a40be43f.js"></script>
+
+<h3 id="object">Object</h3>
+<ol>
+<li>使用Object.assign({}, obj1)</li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/c4f30eaabc67c0000c8782ec522fdcae.js"></script>
+
+<ol start="2">
+<li>使用展開運算子{…obj}</li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/ce040832a9e846c48c78151e7e8b711a.js"></script>
+
+<h3 id="淺拷貝會遇到的問題">淺拷貝會遇到的問題</h3>
+<p>當物件中含有物件時，淺拷貝僅能拷貝物件的第一層，第二層之後它的記憶體位址還是指向相同位置，如下範例：</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/f2d6e80f8353f60aae45f373328d31bd.js"></script>
+
+<h2 id="深拷貝">深拷貝</h2>
+<p>透過Lodash Library來做深拷貝，網址如下：</p>
+<p><a href="https://lodash.com/">Lodash A JavaScript utility library delivering consistency, modularity, performance, &amp; extras.</a></p>
+<p>在第8行使用Lodash CDN引入，在第18行使用 _.cloneDeep(obj1); 做深拷貝的動作，就能將多層物件通通都拷貝啦!</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/cef0798d8b663c11c393aeac5ba7fd96.js"></script>
+
+<p>Lodash也提供了相當多實用的函式，對經常處理資料的使用者可以省去很多時間，Lodash Methods 共分為以下幾種，若有興趣可至<a href="https://lodash.com/docs/4.17.15">Lodash網站</a>深入研究喔!</p>
+<pre><code>- Array
+- Collection
+- Date
+- Function
+- Lang
+- Math
+- Number
+- Object
+- Seq
+- String
+- Util
+- Properties
+- Methods
+</code></pre>
 
         </div>
 
@@ -177,5 +229,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

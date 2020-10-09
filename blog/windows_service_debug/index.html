@@ -107,7 +107,31 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165windows-service-in-debug-mode-825717102fcf">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/windows-service-in-debug-mode-825717102fcf">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*GKxKVZObIoAmaAyj9F1I_g.png" alt="from https://www.beantech.it/academy/c/"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165windows-service-in-debug-mode-825717102fcf">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/windows-service-in-debug-mode-825717102fcf">Medium連結</a></h3>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*x_94b-qmvmJs7lgIFbJhdw.png" alt=""></p>
+<p>因Windows Service無法直接運行Debug模式，若直接執行則會跳出以上錯誤訊息，但其實只需稍微調整也能讓Windows Service用Console Application的方式來執行，非常方便！</p>
+<pre><code>Step1. 調整Service1.cs
+Step2. 調整Program.cs
+Step3. 調整Windows Service project輸出類型
+</code></pre>
+<h2 id="step1-調整service1cs">Step1. <strong>調整Service1.cs</strong></h2>
+<ul>
+<li>在Windows Service專案主要服務類別加入紅框中的Start、Stop方法</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*eslYhKcB29twzaS-0dmFCg.png" alt=""></p>
+<h2 id="step2-調整programcs"><strong>Step2. 調整Program.cs</strong></h2>
+<ul>
+<li>在Windows Service專案的進入點加入紅框內容</li>
+</ul>
+<p><strong>(Note:Environment.UserInteractive屬性可得知目前的處理程序是否正執行於使用者互動模式中，若在Windows Service執行時該屬性為false)</strong></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*VwGSXYFmuUGFV0zuwVPOxg.png" alt=""></p>
+<h2 id="step3-調整windows-service-project輸出類型"><strong>Step3. 調整Windows Service project輸出類型</strong></h2>
+<ul>
+<li>開啟Windows Service專案屬性，將輸出類型調整為主控台應用程式</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2606/1*6tXbdEcqOp5e0WT19Il-4w.png" alt=""></p>
+<p>完成以上動作後就可將Windows Service用Console Application的方式來執行啦！</p>
 
         </div>
 
@@ -177,5 +201,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

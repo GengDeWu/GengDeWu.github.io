@@ -107,7 +107,92 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-e582b3e580bc-pass-by-value-e582b3e59d80-pass-by-referencee4bba5e58f8apass-by-sharing-d3c52ca1c80b">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-%E5%82%B3%E5%80%BC-pass-by-value-%E5%82%B3%E5%9D%80-pass-by-reference%E4%BB%A5%E5%8F%8Apass-by-sharing-d3c52ca1c80b">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*C0mSMUfI1K0_Xs679CJNxw.png" alt="from https://dev.to/albertomontalesi/learn-pass-by-value-and-pass-by-reference-in-javascript-18ch"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-e582b3e580bc-pass-by-value-e582b3e59d80-pass-by-referencee4bba5e58f8apass-by-sharing-d3c52ca1c80b">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-%E5%82%B3%E5%80%BC-pass-by-value-%E5%82%B3%E5%9D%80-pass-by-reference%E4%BB%A5%E5%8F%8Apass-by-sharing-d3c52ca1c80b">Medium連結</a></h3>
+<blockquote>
+<p>這篇希望能透過一些簡單的範例，讓讀者們能夠輕易了解JavaScript的語言特性。</p>
+</blockquote>
+<h2 id="data-type">Data Type</h2>
+<p>在JavaScript裡，有多種的資料型別(Data Type)，但主要分為兩大類，一類是原始型別(Primitive Type)，另一類是物件型別(Object Type)。</p>
+<h2 id="原始型別-primitive-type">原始型別 Primitive Type</h2>
+<ul>
+<li>
+<p>String</p>
+</li>
+<li>
+<p>BigInt</p>
+</li>
+<li>
+<p>Number</p>
+</li>
+<li>
+<p>Boolean</p>
+</li>
+<li>
+<p>Null</p>
+</li>
+<li>
+<p>Undefined</p>
+</li>
+<li>
+<p>Symbol（ 在 ECMAScript 6 定義）</p>
+</li>
+</ul>
+<h2 id="物件型別-object-type">物件型別 Object Type</h2>
+<ul>
+<li>Primitive type以外的，例如object, array, function …等</li>
+</ul>
+<blockquote>
+<p><em>一般來說，Primitive Type會是pass by value，而Object Type則會是pass by reference，以下會用幾個簡單例子來示範。</em></p>
+</blockquote>
+<h2 id="1-原始型別-pass-by-value">1. 原始型別 Pass by value</h2>
+<h3 id="變數記憶體位址值">變數、記憶體位址、值</h3>
+<p>首先，要先來了解在電腦的底層世界，想像記憶體空間就像是一個一個的空間，每一個空間都有他的位址，並可以在該空間內儲存值。為了方便取用，才有了「變數」的存在，拿來連結(指向)這些記憶體位址，宣告變數賦值，就是向電腦要一個記憶體空間來儲存值。</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/5bf8049c39a2fc91b8b0af589891ac96.js"></script>
+
+<p>var a = &lsquo;jerry&rsquo;; ，其實是<strong>變數 a</strong> <strong>指向電腦中某記憶體的位置</strong>(ex: 0x01) <strong>，在這個記憶體位置中，儲存 jerry這個值。</strong></p>
+<p>如果我再宣告了一個 var b = a; ，雖然 b 和 a 的值一樣都是 &lsquo;jerry&rsquo; ，但其實變數 b 是指向了另一個不一樣的記憶體位置 (ex:0x02)，把 a 的值 copy 過來存，a 和 b 是存在於兩個獨立不同的記憶體位置中：</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*RFeUc75b1JB_czHoJNWO9w.png" alt=""></p>
+<p>在第7行b = &lsquo;tony&rsquo;;，則是將記憶體位址0x02儲存的值賦予為tony，如下圖 :</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*peQ4s0bwPKt6naU8d1G9FQ.png" alt=""></p>
+<h2 id="2-物件型別-pass-by-reference">2. 物件型別 Pass by reference</h2>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/f44825ce2edf86f3451ed6795f9364ba.js"></script>
+
+<p>var arr1 = [1,2,3]; ，表示 arr1 指向一個新的記憶體位置(ex: 0x01)，如果再建立第二個陣列並且讓他等於 arr1： var arr2 = arr1; ，這時 arr2 則會直接指向 arr1 的記憶體位置(0x01)，所以不論 arr1 儲存的值為多少， arr2 都會得到一樣的值：</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*_e8yQmsjJqWGPRXlUjTgoQ.png" alt=""></p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/dab416dcd26feb10fe261a51616f07e8.js"></script>
+
+<p>在第3行arr2[0] = 666;，則是將記憶體位址0x01儲存的值index 0 賦予為666，如下圖 :</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*oIZgRPGIZYCKe-fLtZvBZA.png" alt=""></p>
+<h2 id="3-pass-by-sharing">3. Pass by sharing</h2>
+<p>pass by sharing 的定義就有點像融合了pass by value 和 pass by reference：</p>
+<ul>
+<li>
+<p>碰到原始型別，表現行為是 pass by value。</p>
+</li>
+<li>
+<p>碰到物件型別，如果只是改變內容，表現行為是 pass by reference，但是如果對物件作<strong>重新賦值</strong>，表現行為是 pass by value。</p>
+</li>
+</ul>
+<p>所以才會出現這一派的論點，覺得 Javascript 其實是 pass by sharing。</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/5660908d2b793c7e8609ebaa51040a44.js"></script>
+
+<p>以下的流程分解圖可以更清楚了解物件指向的記憶體位置!</p>
+<p>第1～4行</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*RP-Rmee3xb4SoxOiCHm3zw.png" alt=""></p>
+<p>第5行</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*89N0nRcie92Kh00HmeLSQg.png" alt=""></p>
+<p>第6行，改變內容(pass by reference)</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*5rbHR2a8m5hL63_l_XeuAg.png" alt=""></p>
+<p>第7～10行，重新賦值(pass by value)</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*06BFmGsapuO3SJUWJ92AwA.png" alt=""></p>
+<p>第11行</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*0j-9M6Z7dqlJdeYo4zqSlQ.png" alt=""></p>
+<p>由以上範例可得知，book 在第6行被改變內容(pass by reference)，在第7~10行被<strong>重新賦值</strong>(pass by value)，因此bookObj1、bookObj2最終才會有此差異。</p>
+<blockquote>
+<p>結論：在不管名詞定義為何(有些人認為只有pass by sharing)，先以行為來分類的話，<strong>primitive type基本上是pass by value</strong>，而<strong>object基本上是 pass by reference</strong>，唯一要注意的是<strong>重新賦值這個動作造成reference改變所造成的影響</strong>。</p>
+</blockquote>
+<p>下一篇將會來討論：<a href="https://medium.com/@jerrywu_3165/javascript-%E6%B7%BA%E6%8B%B7%E8%B2%9Dshallow-copy-%E6%B7%B1%E6%8B%B7%E8%B2%9Ddeep-copy-%E4%BD%BF%E7%94%A8lodash%E4%BE%86%E8%99%95%E7%90%86%E8%B3%87%E6%96%99%E5%90%A7-b09214a61f59">淺拷貝Shallow Copy &amp; 深拷貝Deep Copy，並且使用Lodash來處理資料</a></p>
 
         </div>
 
@@ -177,5 +262,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

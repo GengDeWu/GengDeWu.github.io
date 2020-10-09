@@ -107,7 +107,45 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165ci-jenkinse695b4e59088visual-code-greppere6ba90e7a2bce6aaa2e6b8ace5b7a5e585b7-ad21bad0db30">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/ci-jenkins%E6%95%B4%E5%90%88visual-code-grepper%E6%BA%90%E7%A2%BC%E6%AA%A2%E6%B8%AC%E5%B7%A5%E5%85%B7-ad21bad0db30">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*zYElANOMBfxBED19v5hd3w.png" alt="from Jenkins.io/www.abbreviations.com"></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165ci-jenkinse695b4e59088visual-code-greppere6ba90e7a2bce6aaa2e6b8ace5b7a5e585b7-ad21bad0db30">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/ci-jenkins%E6%95%B4%E5%90%88visual-code-grepper%E6%BA%90%E7%A2%BC%E6%AA%A2%E6%B8%AC%E5%B7%A5%E5%85%B7-ad21bad0db30">Medium連結</a></h3>
+<p><strong>Visual Code Grepper(VCG)</strong> 這套免費的源碼檢測工具，在功能性與準確性上並不輸給動輒幾百萬的商業檢測工具，唯一的差別應該只在於商業工具會提供較完美的圖表測試報告。</p>
+<p>本篇將示範Jenkins整合Visual Code Grepper自動產出三種格式(.txt、.csv、.xml)的報告。</p>
+<h2 id="1-首先必需先下載visual-code-grepper">1. 首先必需先下載<strong>Visual Code Grepper</strong></h2>
+<p><a href="https://sourceforge.net/projects/visualcodegrepp/">Download VisualCodeGrepper V2.2.0 for free. Code security review tool for C/C++, C#, VB, PHP, Java, PL/SQL, COBOL.</a></p>
+<h2 id="2-找到visualcodegrepperexe存放的位置">2. 找到VisualCodeGrepper.exe存放的位置</h2>
+<p><img src="https://cdn-images-1.medium.com/max/2476/1*j_YKFf0v59SmILqVAz9rAw.png" alt=""></p>
+<h2 id="3-在jenkins專案中加入執行windows批次指令">3. 在Jenkins專案中加入執行Windows批次指令</h2>
+<p><img src="https://cdn-images-1.medium.com/max/3732/1*CYFb76lKRgY0jMKZSKl6GQ.png" alt=""></p>
+<ul>
+<li>
+<p><strong>VCGPath</strong>：VisualCodeGrepper.exe的位置</p>
+</li>
+<li>
+<p><strong>Scan</strong>：要掃描的程式碼位置</p>
+</li>
+<li>
+<p><strong>ResTXT、ResCSV、ResXML</strong>：產出報告的位置</p>
+</li>
+</ul>
+<p>下方為VisualCodeGrepper.exe之參數應用</p>
+<p><img src="https://cdn-images-1.medium.com/max/3468/1*rOxffMRl3PJbc55LMMYACw.png" alt="from https://github.com/nccgroup/VCG"></p>
+<p><strong>三種報告結果呈現如下：</strong></p>
+<ul>
+<li>.txt</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/5120/1*-uWVVVHMYjQKWSdN4fUMhA.png" alt=""></p>
+<ul>
+<li>.csv</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/5090/1*e94WlOGTO2ANI693nzZ5Uw.png" alt=""></p>
+<ul>
+<li>.xml</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/5086/1*gTYo-5Oy7SvkfQYvkE40AQ.png" alt=""></p>
+<p><strong>下方為VCG Github連結，將有更詳細的相關應用資訊</strong>
+<a href="https://github.com/nccgroup/VCG">nccgroup/VCG VisualCodeGrepper - Code security scanning tool.</a></p>
+<p><strong>以上為Jenkins整合Visual Code Grepper自動產出三種格式報告的範例，若有其他應用建議歡迎討論!</strong></p>
 
         </div>
 
@@ -177,5 +215,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

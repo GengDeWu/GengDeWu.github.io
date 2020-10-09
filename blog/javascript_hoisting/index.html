@@ -107,7 +107,69 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-what-is-hoisting-in-javascript-b13fa8cc0e41">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-what-is-hoisting-in-javascript-b13fa8cc0e41">Medium連結</a></h3>
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*AK2iZxv46l7wwv5_TVxlBQ.png" alt=""></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165javascript-what-is-hoisting-in-javascript-b13fa8cc0e41">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/javascript-what-is-hoisting-in-javascript-b13fa8cc0e41">Medium連結</a></h3>
+<h2 id="what-is-hoisting">What is hoisting?</h2>
+<p>在JavaScript中宣告的變數和函式，會被JavaScript直譯器 (interpreter) 先處理，換句話說，當你在 global 或 function 任何一個位置宣告變數，就像在該 scope 最頂端的位置宣告一樣，這種特性就叫做 Hoisting (提升)。</p>
+<p>在我們定義變數、函式的過程中，可以分成 <strong>宣告(declaration)</strong> 和 <strong>賦值(initialization)</strong> 兩個過程，只有宣告的內容會在逐行執行程式前先被執行並儲存在記憶體中(hoisting)；賦值的內容則是在hoisting後，逐行執行程式時，才會被執行到。</p>
+<h2 id="大綱">大綱</h2>
+<ul>
+<li>
+<p>(var)變數宣告的提升</p>
+</li>
+<li>
+<p>(function)函式宣告的提升</p>
+</li>
+<li>
+<p>(let/const)宣告與Temporal Dead Zone</p>
+</li>
+</ul>
+<h2 id="1-var變數宣告的提升">1. (var)變數宣告的提升</h2>
+<blockquote>
+<p><strong>正常印出值</strong></p>
+</blockquote>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/d10f4459b28703c3b1968decb7bb968d.js"></script>
+
+<blockquote>
+<p><strong>印出undefined</strong></p>
+</blockquote>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/b1326f3e05f255de921a1db23164215e.js"></script>
+
+<blockquote>
+<p><strong>從編譯器的角度來看</strong></p>
+</blockquote>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/8af68ae6bb15acf06d4885066e47a7ab.js"></script>
+
+<h2 id="2-function函式宣告的提升">2. (function)函式宣告的提升</h2>
+<p>透過以下的幾個例子，可以得知變數的提升只有宣告部份，而函式的提升是整個函式，因此函式在宣告前是可以執行的。</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/e821b264df01df2a006b098dd33f0375.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/55df68c74ec5ead30db50b47f9d4b546.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/9541227ee1af5db02779551e60452f46.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/8cf1af676540025f784b4a9cfc6ab00b.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/c4a870d28fcd51a2cc031a3a2c6236e6.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/388f4dcce228911e7d07ecca83cf9539.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/d67c05f943dc661dab9c19c88c3f14bc.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/8a0ba4e600de579867f0ddba8a194069.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/cfe9f4731063f4f182ef1cb4563dc3ed.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/a0dee2cd27dcabd0c0677bf0a92eee55.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/144a4d902ada1fffd0763385d654e020.js"></script>
+
+<h2 id="3-letconst宣告與temporal-dead-zone">3. (let/const)宣告與Temporal Dead Zone</h2>
+<p>let 與 const 也有 hoisting，與 var 的差異在於提升之後，var 宣告的變數會變為 undefined，而 let 與 const 的宣告不會變為 undefined，且<strong>在「提升之後」、「賦值之前」的這段期間就存取它，就會拋出錯誤，而這段期間就稱做是 TDZ(Temporal Dead Zone)</strong>。</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/60732611dac0958e6979cf38921e55d4.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/f97a8c40d5347d3db09a06bb9fce17c0.js"></script>
+
 
         </div>
 
@@ -177,5 +239,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>

@@ -17,7 +17,7 @@
       <pubDate>Wed, 07 Oct 2020 23:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/javascript_scope_closure/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+      <description>本篇同步發佈在Medium平台上 Medium連結 若還不清楚甚麼是提升Hoisting的話，可以先看看之前的介紹喔！因為文章內容有部分相關，所以必須先有 Execution Context 以及 Variable Object 的觀念後，會較能理解本篇的內容。</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/javascript_shallowcopy_deepcopy_lodash/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+      <description>本篇同步發佈在Medium平台上 Medium連結  在前一篇有提到pass by reference與pass by sharing的原理，那當我們要拷貝物件型別的資料時該如何實作呢，以下就讓我們來看看吧!</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Fri, 02 Oct 2020 17:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/javascript_passbyvalue_reference_sharing/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+      <description>本篇同步發佈在Medium平台上 Medium連結  這篇希望能透過一些簡單的範例，讓讀者們能夠輕易了解JavaScript的語言特性。</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sun, 20 Sep 2020 23:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/javascript_float_calculation/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+      <description>本篇同步發佈在Medium平台上 Medium連結 用Javascript來做加減乘除，如果是使用小數的話，跑出來的數字會非常奇特，主要問題在於Javascript運算是依循IEEE754的規範，在運算時會轉換成二進制來計算數值，而浮點數在轉成二進制時會形成無窮迴圈，最後再轉換成十進制，進而產生運算誤差。</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Sun, 20 Sep 2020 22:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/javascript_hoisting/</guid>
-      <description>本篇暫時發佈在Medium平台上 Medium連結 </description>
+      <description>本篇同步發佈在Medium平台上 Medium連結 What is hoisting?</description>
     </item>
     
   </channel>

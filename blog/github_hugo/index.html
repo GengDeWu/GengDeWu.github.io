@@ -107,7 +107,7 @@
         </div>
         
         <div class="content mb-5">
-          <h3 id="本篇暫時發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165e9818be794a8github-hugoe5858de8b2bbe983a8e5b1ace99d9ce6858be7b6b2e7ab99-b92013c25956">本篇暫時發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/%E9%81%8B%E7%94%A8github-hugo%E5%85%8D%E8%B2%BB%E9%83%A8%E5%B1%AC%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-b92013c25956">Medium連結</a></h3>
+          <h3 id="本篇僅發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165e9818be794a8github-hugoe5858de8b2bbe983a8e5b1ace99d9ce6858be7b6b2e7ab99-b92013c25956">本篇僅發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/%E9%81%8B%E7%94%A8github-hugo%E5%85%8D%E8%B2%BB%E9%83%A8%E5%B1%AC%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-b92013c25956">Medium連結</a></h3>
 
         </div>
 
@@ -177,5 +177,14 @@
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-167118505-1', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
 </html>
