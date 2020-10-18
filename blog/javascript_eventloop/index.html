@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹JavaScript中的Call Stack、Callback Queue以及Event Loop">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(JavaScript)Call Stack, Callback Queue, Event Loop in JavaScript</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>18 October 2020</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/javascript"
+          class="text-primary">Javascript</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*4XElRWCtF7C2XThHLYSBLQ.gif" alt=""></p>
+<h3 id="本篇同步發佈在medium平台上-medium連結httpsjerrywu-3165mediumcomjavascript-call-stack-callback-queue-event-loop-in-javascript-5f44b9316869">本篇同步發佈在Medium平台上 <a href="https://jerrywu-3165.medium.com/javascript-call-stack-callback-queue-event-loop-in-javascript-5f44b9316869">Medium連結</a></h3>
+<h2 id="call-stack">Call Stack</h2>
+<p>在了解這三樣東西之前，要先知道 JavaScript 是<strong>單執行緒</strong> single thread 的程式語言，因此一次只能執行一個任務，而 JavaScript中等待執行的任務會放入一個堆疊，我們叫它為 <strong>Call Stack</strong>。</p>
+<p>以下是一個Call Stack的範例：</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/74c4f35bd6394dbcde148fb6a11d440e.js"></script>
+
+<p>最終會依序印出：</p>
+<pre><code>foo
+bar
+baz
+</code></pre>
+<p>瀏覽器執行上述JavaScript時，Call Stack這個容器是怎麼被操作的呢，讓我們看看下圖詳細的流程吧！</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*Jw6-ttv6fWExUrcSV8cqng.png" alt="https://flaviocopes.com/javascript-event-loop/"></p>
+<h2 id="callback-queue">Callback Queue</h2>
+<p>簡單來說Callback Queue就是各種非同步事件用來排隊的地方，一般認為就是用以下幾種分出不同的佇列，但實作部份要視瀏覽器決定，其中的順序是依照FIFO(先進先出)，以下是幾種會包含的任務:</p>
+<ul>
+<li>
+<p>Events(事件): EventTarget物件非同步分派到對應的Events物件</p>
+</li>
+<li>
+<p>Parsing(解析): HTML parser</p>
+</li>
+<li>
+<p>Callbacks(回調): 呼叫非同步回調函式</p>
+</li>
+<li>
+<p>使用外部資源: 資料庫、檔案、Web I/O</p>
+</li>
+<li>
+<p>DOM處理的反應: 回應DOM處理時的元素對應事件</p>
+</li>
+</ul>
+<p>在瀏覽器端的JavaScript程式語言中，除了一般的事件分派外，還有少數幾個內建的API與相關物件有類似的非同步機制，有一些簡單的樣式可以利用它們模擬出非同步的執行程式:</p>
+<ul>
+<li>
+<p>setTimeout</p>
+</li>
+<li>
+<p>setInterval</p>
+</li>
+<li>
+<p>XMLHttpRequest</p>
+</li>
+<li>
+<p>requestAnimationFrame</p>
+</li>
+<li>
+<p>WebSocket</p>
+</li>
+<li>
+<p>Worker</p>
+</li>
+<li>
+<p>某些HTML5 API，例如File API、Web Database API</p>
+</li>
+<li>
+<p>有使用onload的API</p>
+</li>
+</ul>
+<p>舉個例子：</p>
+<p>假如非同步事件會和同步事件都一起被放進 Call stack，那麼就會造成<strong>阻塞blocking</strong>，例如我們發出一個HTTP請求，那麼在完成 response 之前，就會因為 JavaScript 單執行緒的特性，我們在網頁上都無法進行其它操作。</p>
+<p>為了避免這種問題，非同步事件裡的<strong>回調函式 callback function</strong>，它們會進入到 Callback Queue 裡面，等 Call stack 裡面沒有其它任務才會進入到 Call stack 執行。</p>
+<h2 id="event-loop">Event Loop</h2>
+<p>上述提到非同步事件會等 Call stack 裡面沒有其它任務才會進入到 Call stack 執行，就是透過 Event loop 機制去做判斷的，其監測步驟如下:</p>
+<ol>
+<li>確認 Call stack 裡面有沒有Job，沒有才確認步驟2</li>
+<li>確認 Callback Queue 裡面有沒有Job，有的話就把最前面的Job移到 Call stack</li>
+<li>執行完該Job，又會再回到步驟1，持續這個Loop</li>
+</ol>
+<p>最後，推薦讀者們可以觀看以下影片，講者Philip Roberts搭配了JavaScript運行的動畫講解Event Loop的機制，非常詳細且清楚！</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/8aGhZQkoFbQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>

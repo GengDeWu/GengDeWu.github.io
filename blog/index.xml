@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 07 Oct 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2020 19:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(JavaScript)Call Stack, Callback Queue, Event Loop in JavaScript</title>
+      <link>https://GengDeWu.github.io/blog/javascript_eventloop/</link>
+      <pubDate>Sun, 18 Oct 2020 19:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/javascript_eventloop/</guid>
+      <description>本篇同步發佈在Medium平台上 Medium連結 Call Stack 在了解這三樣東西之前，要先知道 JavaScript 是單執行緒 single thread 的程式語言，因此一次只能執行一個任務，而 JavaScript中等待執行的任務會放入一個堆疊，我們叫它為 Call Stack。</description>
+    </item>
     
     <item>
       <title>(JavaScript)What is a closure? 解析作用域Scope &amp; 閉包Closure</title>
