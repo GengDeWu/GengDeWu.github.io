@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 18 Oct 2020 19:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C Sharp</title>
+      <link>https://GengDeWu.github.io/categories/c-sharp/</link>
+      <pubDate>Mon, 30 Nov 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/categories/c-sharp/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>javascript</title>
