@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹(C#) 動態處理字串 String V.S. StringBuilder 效能">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(C#) 動態處理字串 String V.S. StringBuilder 效能</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>30 November 2020</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/c-sharp"
+          class="text-primary">C sharp</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*MWsl9wsde_u84heWiJYdug.png" alt=""></p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsjerrywu-3165mediumcomc-e58b95e6858be89995e79086e5ad97e4b8b2-string-v-s-stringbuilder-e69588e883bd-371f8652db9a">本篇同步發佈在 Medium 平台上 <a href="https://jerrywu-3165.medium.com/c-%E5%8B%95%E6%85%8B%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2-string-v-s-stringbuilder-%E6%95%88%E8%83%BD-371f8652db9a">Medium 連結</a></h3>
+<p>首先，String 與 StringBuilder 是不同的喔！</p>
+<h2 id="string">String</h2>
+<ol>
+<li>
+<p>命名空間:System</p>
+</li>
+<li>
+<p>代表不變的字串，一旦設定好值，就不能更改它。</p>
+</li>
+<li>
+<p>String 是字元的陣列，一個連續的記憶體，當要新增、修改、刪除、變動 String 時，就必須毀掉這個陣列重新建立一個字串，因此很耗效能</p>
+</li>
+</ol>
+<p><strong>String 類別 (System)</strong>
+<a href="https://docs.microsoft.com/zh-tw/dotnet/api/system.string?view=netframework-4.7.2">MicroSoft 文件連結</a></p>
+<h2 id="stringbuilder">StringBuilder</h2>
+<ol>
+<li>
+<p>命名空間:System.Text</p>
+</li>
+<li>
+<p>表示可變動的字元字串，此類別無法被繼承。</p>
+</li>
+<li>
+<p>使用時機：預期對字串進行大量變更時、預計在迴圈內串連字串時。</p>
+</li>
+<li>
+<p>不是 string，所以需要使用 .ToString() 轉成 String 型態。</p>
+</li>
+</ol>
+<p><strong>在 .NET 中使用 StringBuilder 類別</strong>
+<a href="https://docs.microsoft.com/zh-tw/dotnet/standard/base-types/stringbuilder">MicroSoft 文件連結</a></p>
+<h2 id="實際測試">實際測試</h2>
+<h3 id="1-動態字串-loop-10-次">1. 動態字串 Loop 10 次</h3>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*po9I1FHX3x8Z4op6vLRhAQ.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*am646pyVQPxR2DO-0d4tEQ.png" alt=""></p>
+<p>可以看到兩者花費時間是差不多的，StringBuilder 快 String 一倍。</p>
+<h3 id="2-動態字串-loop-100000-次">2. 動態字串 Loop 100000 次</h3>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*o4Kr0ZwDk7XJEofS1rte2Q.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*rzMVMc4e0llsBPCABZoGFA.png" alt=""></p>
+<p>此時 StringBuilder 已經比 String 快上 1000 多倍了！</p>
+<h3 id="3-靜態字串">3. 靜態字串</h3>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*K27-UNgtQcnXmAHrrj2qOA.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*JZX5tsSVKlf8ngJ8dBlw-Q.png" alt=""></p>
+<p>在靜態字串時，String 比 StringBuild 效能來的好！</p>
+<blockquote>
+<p>結論：當您要動態處理字串時最好選用 StringBuilder 類別 ，靜態處理字串則選用 String 類別。</p>
+</blockquote>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>
