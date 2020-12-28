@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C Sharp on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/categories/c-sharp/</link>
+    <description>Recent content in C Sharp on Jerry&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 28 Dec 2020 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/categories/c-sharp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(C#) Yield Return and Iterator Pattern</title>
+      <link>https://GengDeWu.github.io/blog/c_sharp_yield_return_iterator_pattern/</link>
+      <pubDate>Mon, 28 Dec 2020 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/c_sharp_yield_return_iterator_pattern/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結 What is Yield？ Yield 就是 Microsoft .</description>
+    </item>
+    
+    <item>
+      <title>(C#) 動態處理字串 String V.S. StringBuilder 效能</title>
+      <link>https://GengDeWu.github.io/blog/c_sharp_string_stringbuilder/</link>
+      <pubDate>Mon, 30 Nov 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/c_sharp_string_stringbuilder/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結 首先，String 與 StringBuilder 是不同的喔！</description>
+    </item>
+    
+  </channel>
+</rss>
