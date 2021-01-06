@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹 What is if __name__ == &#39;__main__&#39; in Python">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(Python)What is if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo; in Python ?</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>06 January 2021</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/python"
+          class="text-primary">Python</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/1376/1*LXqsUvUdpgSludxMx-4S8A.png" alt=""></p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsjerrywu-3165mediumcompython-what-is-if-name-main-in-python-ce9c60f9bb54">本篇同步發佈在 Medium 平台上 <a href="https://jerrywu-3165.medium.com/python-what-is-if-name-main-in-python-ce9c60f9bb54">Medium 連結</a></h3>
+<p>到底這個 if <strong>name</strong> == &lsquo;<strong>main</strong>':是什麼意思呢 ?</p>
+<p>首先，如果你永遠都只執行一個 Python 檔，而不引用別的 Python 檔案的話，那麼你不必知道這是什麼東西，反之則來好好理解它吧！</p>
+<h3 id="我直接舉一個例子-">我直接舉一個例子 🌰</h3>
+<p>首先先創建一個 test_Demo.py 然後寫入以下程式：</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*eek3gDuA6xUkb9onDfIfjA.png" alt=""></p>
+<p>然後執行 test_Demo.py 會得到：</p>
+<ul>
+<li>Taiwan</li>
+<li>main</li>
+<li>Taiwan Number</li>
+<li>Taiwan Number One !</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*e2ckQs3Jv4x5GjgZHVc1rQ.png" alt=""></p>
+<p>接著在同一層的資料夾中建立名稱為 import_test_Demo.py 的檔案，寫入以下程式：</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*O32USXS54U9XASBM84fwuA.png" alt=""></p>
+<p>然後執行 import_test_Demo.py 會得到：</p>
+<ul>
+<li>Taiwan</li>
+<li>test_Demo</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*5WbA1l2EdcDTTvkLqtmtEQ.png" alt=""></p>
+<p>簡而言之 <strong>name</strong> 會是當前檔案名稱，當檔案被直接運行時檔案名稱將為<strong>main</strong> 。 因此，</p>
+<ul>
+<li>「單獨執行」時程式將被運行，if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;成立</li>
+<li>「被引用」時程式不被運行，if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;不成立</li>
+</ul>
+<h2 id="為什麼要有-if-name--main">為什麼要有 if <strong>name</strong> == &lsquo;<strong>main</strong>'?</h2>
+<p>在於獨立撰寫一些 funtion 時，可以直接執行 funtion 單純的看這個 function 功能是否正常。然而，這一個 function 實際上可能是要給一個大的主程式所使用，如果每一次都要檢查 function 是否正常，都要執行 main，是一個費時費力的過程，若能直接執行 funtion 檢查功能是否正常，將相對有效率！</p>
+<p>簡而言之，我們透過「if <strong>name</strong> == &lsquo;<strong>main</strong>'」來控制 funtion，可以將測試資料放在「if <strong>name</strong> == &lsquo;<strong>main</strong>'」的裡面，當單純執行 function 的執行檔時，則會利用測試資料檢測其功能；當利用 main 呼叫 function 操作時，就不會執行測試資料！只會直接執行 main 所想代入之變數，傳到 function 運算後將結果回傳給 main！</p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>

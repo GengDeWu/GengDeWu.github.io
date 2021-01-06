@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unittest on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/tags/unittest/</link>
+    <description>Recent content in Unittest on Jerry&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 06 Jan 2021 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/tags/unittest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(Python)What is if __name__ == &#39;__main__&#39; in Python ?</title>
+      <link>https://GengDeWu.github.io/blog/python_if_name_equal_main/</link>
+      <pubDate>Wed, 06 Jan 2021 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/python_if_name_equal_main/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結 到底這個 if name == &amp;lsquo;main&#39;:是什麼意思呢 ?</description>
+    </item>
+    
+  </channel>
+</rss>
