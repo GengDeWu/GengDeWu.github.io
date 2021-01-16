@@ -3,22 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://GengDeWu.github.io/blog/python_if_name_equal_main/</loc>
-    <lastmod>2021-01-06T23:00:00+08:00</lastmod>
+    <loc>https://GengDeWu.github.io/blog/sql_server_sql_injection/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/blog/</loc>
-    <lastmod>2021-01-06T23:00:00+08:00</lastmod>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/categories/</loc>
-    <lastmod>2021-01-06T23:00:00+08:00</lastmod>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/execution-plan/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/parameterized-query/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/categories/parameterized-query/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/sql-injection/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/sql-server/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/</loc>
+    <lastmod>2021-01-16T23:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/blog/python_if_name_equal_main/</loc>
     <lastmod>2021-01-06T23:00:00+08:00</lastmod>
   </url>
   
@@ -29,11 +64,6 @@
   
   <url>
     <loc>https://GengDeWu.github.io/categories/python/</loc>
-    <lastmod>2021-01-06T23:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/tags/</loc>
     <lastmod>2021-01-06T23:00:00+08:00</lastmod>
   </url>
   
@@ -178,12 +208,7 @@
   </url>
   
   <url>
-    <loc>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database/</loc>
-    <lastmod>2020-09-08T23:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/tags/sql-server/</loc>
+    <loc>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database-copy/</loc>
     <lastmod>2020-09-08T23:00:00+08:00</lastmod>
   </url>
   

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parameterized Query on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/categories/parameterized-query/</link>
+    <description>Recent content in Parameterized Query on Jerry&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 16 Jan 2021 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/categories/parameterized-query/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(SQL) 爲什麼參數化查詢可以防止SQL Injection/如何觀看Execution Plan上的差異</title>
+      <link>https://GengDeWu.github.io/blog/sql_server_sql_injection/</link>
+      <pubDate>Sat, 16 Jan 2021 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/sql_server_sql_injection/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結 很多人都知道 SQL Injection 的攻擊原理，也知道參數化查詢可以防止 SQL Injection，但是參數化查詢爲什麼能防止 SQL Injection呢？本篇文章主要說明的正是這個問題，在了解主要原因(不使用組字串方式執行 SQL)後，將帶你了解如何觀看 Execution Plan 上的差異。</description>
+    </item>
+    
+  </channel>
+</rss>

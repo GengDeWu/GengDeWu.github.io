@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹爲什麼參數化查詢可以防止SQL Injection以及如何觀看Execution Plan上的差異">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(SQL) 爲什麼參數化查詢可以防止SQL Injection/如何觀看Execution Plan上的差異</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>16 January 2021</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/parameterized-query"
+          class="text-primary">Parameterized query</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/1400/1*Acl2AKO2OmsLc_zuMBc56Q.png" alt="from https://medium.com/@charithra/introduction-to-sql-injections-8c806537cf5d"></p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsjerrywu-3165mediumcomsql-e788b2e4bb80e9babce58f83e695b8e58c96e69fa5e8a9a2e58fafe4bba5e998b2e6ada2sql-injection-670e98c0c3bf">本篇同步發佈在 Medium 平台上 <a href="https://jerrywu-3165.medium.com/sql-%E7%88%B2%E4%BB%80%E9%BA%BC%E5%8F%83%E6%95%B8%E5%8C%96%E6%9F%A5%E8%A9%A2%E5%8F%AF%E4%BB%A5%E9%98%B2%E6%AD%A2sql-injection-670e98c0c3bf">Medium 連結</a></h3>
+<p>很多人都知道 SQL Injection 的攻擊原理，也知道參數化查詢可以防止 SQL Injection，但是<strong>參數化查詢爲什麼能防止 SQL Injection</strong>呢？本篇文章主要說明的正是這個問題，在了解<strong>主要原因(不使用組字串方式執行 SQL)<strong>後，將帶你了解</strong>如何觀看 Execution Plan 上的差異</strong>。</p>
+<h2 id="主要原因不使用組字串方式執行-sql"><strong>主要原因(不使用組字串方式執行 SQL)</strong></h2>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/6555b5f41d81aed420b09caf7049e8ba.js"></script>
+
+<p>像上述這樣丟進 SQL Server 的參數是不會被當作 SQL 語法去執行的，因此就算使用者輸入的參數有注入的語法也不會因此執行成功！</p>
+<p>在使用參數化查詢語法的情況下，SQL Server 會先將 SQL 語句進行編譯，之後再把使用者輸入的參數丟進先前編譯的 SQL 語句再次執行。而預處理的 SQL 語句除了防範 SQL injection 更提升了效能。</p>
+<p>接著將來看看使用不同的查詢在 SQL Server Execution Plan 上的差異！</p>
+<h2 id="如何觀看-execution-plan-上的差異">如何觀看 Execution Plan 上的差異</h2>
+<p>首先，我們要了解 SQL Server 收到一個指令後會做些什麼事情：</p>
+<p>實際上可能有些差異，但大致的步驟如下，</p>
+<p><strong>SQL Server 收到 SQL 指令 &ndash;&gt; 進行語法解析、語意分析 &ndash;&gt; 編譯 SQL 生成執行計劃 &ndash;&gt;選擇執行計劃 &ndash;&gt;執行執行計劃</strong>。</p>
+<p>接著我們就來創建一張表並實際來看看以下三種查詢在 SQL Server 是怎麼被執行的：</p>
+<blockquote>
+<p>(1) 正常的查詢，執行有漏洞的 SP</p>
+</blockquote>
+<blockquote>
+<p>(2) SQL Injection 查詢，執行有漏洞的 SP</p>
+</blockquote>
+<blockquote>
+<p>(3) 參數化查詢，執行使用參數化寫法的 SP</p>
+</blockquote>
+<p>首先創建一張 USERS 表，語法如下：</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/7d3eb9275cc546f5533b795f82b70ccf.js"></script>
+
+<p>並且寫入一些測試資料，語法如下：</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/d619250a9908c1d5e948083b1866c591.js"></script>
+
+<p>執行完上述語法後，此時資料庫內應會有這五筆資料：</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*hB9ZE5aXhYeuHTJ8rwAZlA.png" alt=""></p>
+<p>接下來分別測試三種查詢方式，<strong>並觀察其 Execution Plan</strong>，此處將使用 Store Procedure 做示範：</p>
+<p>首先，分別建立兩個 Store Procedure</p>
+<h3 id="wrongsp-使用組字串的方式最後使用-exec-執行"><strong>WrongSP (使用組字串的方式最後使用 EXEC 執行)</strong></h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/0ffcd89bc145c4bfa6a51d17f18af0e7.js"></script>
+
+<h3 id="correctsp-使用參數化查詢方式">CorrectSP (使用參數化查詢方式)</h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/8f4893fef0835d3adda1cfc0bd71abe0.js"></script>
+
+<h3 id="1-正常的查詢執行有漏洞的-sp">(1) 正常的查詢，執行有漏洞的 SP</h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/93003d7fd4a4fee27fc9bc0a736ccfa2.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/3576/1*770Nc8dMBH9zaQWU_v9mPg.png" alt=""></p>
+<h3 id="2-sql-injection-查詢執行有漏洞的-sp">(2) SQL Injection 查詢，執行有漏洞的 SP</h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/e66b683577c7b7a8636de7cc420ee09a.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/3598/1*bymfC3OON772eL7alRo2Eg.png" alt=""></p>
+<h3 id="3-參數化查詢執行使用參數化寫法的-sp">(3) 參數化查詢，執行使用參數化寫法的 SP</h3>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/e8e9192968a62811759e4fd1b2a15bfd.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/2842/1*-0NSQbJCd_LDEuab93Xv1w.png" alt=""></p>
+<p>若不清楚物件類型的區別這邊幫大家擷取 Microsoft 的文件，該欄位內容如下：</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*3lw4dErnUdpRrRMrCQInWA.png" alt="from https://docs.microsoft.com/zh-tw/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-cached-plans-transact-sql?view=sql-server-ver15"></p>
+<p>以上試驗應該可以看出三種查詢其在執行 Execution Plan 上是有差異的，</p>
+<p><strong>(1) 正常的查詢：</strong> 執行三次 WrongSP，執行計畫結果為 → 使用 3 次 Proc，另外使用 2 次 Adhoc，我再舉一個例子可以更明顯看出原因，</p>
+<script type="application/javascript" src="https://gist.github.com/GengDeWu/e2c2b7648b413469ccf5f2f1bc70efdc.js"></script>
+
+<p><img src="https://cdn-images-1.medium.com/max/3620/1*10cG6kj1-Q017qpAHVitTQ.png" alt=""></p>
+<p>一樣都是執行三次 WrongSP，<strong>我只改變了查詢條件的一個字</strong>便使用了三個不同的 Execution Plan，<strong>表示三次查詢皆沒有重用 Proc 的 Execution Plan！</strong></p>
+<p><strong>(2) SQL Injection 查詢：</strong> 執行三次 WrongSP，執行計畫結果為 → 使用 3 次 Proc，另外使用 2 次 Adhoc，會有這樣的結果在剛剛第一點的例子也解釋了這是因為<strong>沒有重用 Proc 的 Execution Plan！</strong></p>
+<p><strong>(3) 參數化查詢：</strong> 執行三次 CorrectSP，執行計畫結果為 → 使用 3 次 Proc，這表示了什麼？<strong>就是 Proc 的 Execution Plan 被重用了！</strong></p>
+<p>經過上述說明，可以看到在第二個例子(SQL Injection 查詢)中，SQL 表示的含義是找出(UserName=&rsquo;&rsquo; 且 CellPhoneNumber=&rsquo;') 或者 1=1 的所有 User，這段 SQL Injection 語法改變了原來自己的初衷，也就是 SQL 的語意發生了改變，而為什麼發生了改變呢？原因是沒有重用先前建立好的 Execution Plan(Proc)，造成 SQL Server 對注入後的 SQL 語法重新進行了編譯、生成 Execution Plan 並執行新的 Execution Plan。</p>
+<h2 id="結語">結語</h2>
+<p>參數化查詢爲什麼能防止 SQL Injection，<strong>主要是因為不使用「組字串」的方式來執行 SQL。<strong>而在第二部分觀看 Execution Plan 上的差異，可以得知</strong>執行計畫未被更改(也就是重用 Execution Plan)，是可以防止 SQL Injection 的</strong>。</p>
+<p>而 Insert/Update/Delete 也是一樣的道理，只要可以重用 Execution Plan，SQL 所要表達的語意就不會變化！</p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>

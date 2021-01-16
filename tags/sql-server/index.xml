@@ -6,17 +6,26 @@
     <description>Recent content in SQL Server on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 08 Sep 2020 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jan 2021 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>(SQL) 爲什麼參數化查詢可以防止SQL Injection/如何觀看Execution Plan上的差異</title>
+      <link>https://GengDeWu.github.io/blog/sql_server_sql_injection/</link>
+      <pubDate>Sat, 16 Jan 2021 23:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/sql_server_sql_injection/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結 很多人都知道 SQL Injection 的攻擊原理，也知道參數化查詢可以防止 SQL Injection，但是參數化查詢爲什麼能防止 SQL Injection呢？本篇文章主要說明的正是這個問題，在了解主要原因(不使用組字串方式執行 SQL)後，將帶你了解如何觀看 Execution Plan 上的差異。</description>
+    </item>
+    
+    <item>
       <title>(SQL Server)How to Find which user deleted the database in SQL Server</title>
-      <link>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database/</link>
+      <link>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database-copy/</link>
       <pubDate>Tue, 08 Sep 2020 23:00:00 +0800</pubDate>
       
-      <guid>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database/</guid>
+      <guid>https://GengDeWu.github.io/blog/sql_server_find_which_user_deleted_the_database-copy/</guid>
       <description>本篇同步發佈在Medium平台上 Medium連結 在使用SQL Server資料庫時，若該環境是多人共用且大家都使用最高權限的帳號在操作資料庫時，就有機會發生資料庫被誤刪的情況，本篇僅能查出是哪位User(Login SQL Server Account)哪台Computer(HostName)做了刪除動作，要確保資料庫的安危還是需定期備份並且做好帳號的權限管理才是比較正確的做法。</description>
     </item>
     
