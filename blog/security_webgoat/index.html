@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹WebGoat安裝方式以及漏洞演練">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(Security)WebGoat 安裝 &amp; 漏洞演練</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>03 March 2021</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/security"
+          class="text-primary">Security</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/1400/1*9w1cPkOx8OK3QvXSIN91Ow.png" alt=""></p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsjerrywu-3165mediumcomsecurity-webgoat-e5ae89e8a39d-e6bc8fe6b49ee6bc94e7b7b4-30ea49e15b23">本篇同步發佈在 Medium 平台上 <a href="https://jerrywu-3165.medium.com/security-webgoat-%E5%AE%89%E8%A3%9D-%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%B7%B4-30ea49e15b23">Medium 連結</a></h3>
+<hr>
+<h2 id="前言">前言</h2>
+<p>WebGoat 是專門用來練習漏洞的 Web 應用程式，所以裡面的網頁都是漏洞百出的，因此官方也建議在使用 WebGoat 練習時，最好是把網路中斷，以免有心人士利用，讓使用者反而變成受害者。</p>
+<p>此外，WebGoat 只供教育/練習使用，在這邊學到的任何技術都不能拿去測試外面的網頁，以免觸法！</p>
+<hr>
+<h2 id="webgoat-安裝">WebGoat 安裝</h2>
+<p>在官方 Github 上可以看到，安裝 WebGoat 有四種方式</p>
+<blockquote>
+<ol>
+<li>Run using Docker</li>
+<li>Standalone</li>
+<li>Run from the sources</li>
+<li>Run with custom menu</li>
+</ol>
+</blockquote>
+<p>接下來將使用第二種安裝方式做示範。</p>
+<h3 id="1-請先確認電腦上是否有安裝-jre"><strong>1. 請先確認電腦上是否有安裝 JRE</strong></h3>
+<p><a href="https://www.oracle.com/java/technologies/javase-downloads.html">Java SE Downloads</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/2832/1*O8IuVZD1avIkuaD3qMv8Sw.png" alt=""></p>
+<h3 id="2-到官方-github-上下載最新版-webgoat"><strong>2. 到官方 github 上下載最新版 WebGoat</strong></h3>
+<p><a href="https://github.com/WebGoat/WebGoat/releases">WebGoat Github</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/2038/1*uFsIG6WM-m7OtBJqXpu8qw.png" alt=""></p>
+<h3 id="3-執行所下載的檔案"><strong>3. 執行所下載的檔案</strong></h3>
+<blockquote>
+<p>Windows：
+java -jar webgoat-server-8.1.0.jar [ — server.port=8080] [ — server.address=localhost]</p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*QWEUbGvAk_fGM2ciS5-9yQ.png" alt=""></p>
+<blockquote>
+<p>macOS：
+java -jar webgoat-server-8.1.0.jar</p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*G3D07nmPj6Z8xBzvvyVIKA.png" alt=""></p>
+<blockquote>
+<p>Notice：注意輸入執行指令後是否皆無錯誤訊息、是否該 port 已有其他服務</p>
+</blockquote>
+<h3 id="4-輸入上述所設定的-port-及-server-網址如果沒有特別設定則網址為"><strong>4. 輸入上述所設定的 Port 及 Server 網址，如果沒有特別設定則網址為：</strong></h3>
+<blockquote>
+<p><a href="http://localhost:8080/WebGoat">http://localhost:8080/WebGoat</a></p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*wwXBNXvuJp5emhwLn0Tq0g.png" alt=""></p>
+<h3 id="5-先點選-register-new-user-來建立一個新帳戶"><strong>5. 先點選 Register new user 來建立一個新帳戶</strong></h3>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*oUl26OanWEB45M23NPkMpw.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*pHSFzc_ugMq2wkrZjcXdJA.png" alt=""></p>
+<h3 id="6-看到與下圖相同的-webgoat-首頁就可以開始演練各種漏洞啦"><strong>6. 看到與下圖相同的 WebGoat 首頁就可以開始演練各種漏洞啦！</strong></h3>
+<p><img src="https://cdn-images-1.medium.com/max/3730/1*scRg95fNtErZam1PGo9AYw.png" alt=""></p>
+<hr>
+<h2 id="漏洞演練--sql-injection">漏洞演練 : SQL Injection</h2>
+<p>至左邊選單 (A1) Injection → SQL Injection (intro) → Page 9</p>
+<blockquote>
+<p>此處可以讓您練習如何組出 SQL Injection 的攻擊字串，取得資料庫中不屬於您的資料。</p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/3698/1*jqIKSy02nVZmBCpVLqmswQ.png" alt=""></p>
+<h2 id="漏洞演練--xss-cross-site-scripting">漏洞演練 : XSS (<strong>Cross Site Scripting</strong>)</h2>
+<p><img src="https://cdn-images-1.medium.com/max/3084/1*PJLWxr_earT40geJhhftNA.png" alt=""></p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>

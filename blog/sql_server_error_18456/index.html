@@ -108,13 +108,13 @@
         
         <div class="content mb-5">
           <p><img src="https://cdn-images-1.medium.com/max/2000/1*Asx37iMEoRULeZeepIQAqg.png" alt=""></p>
-<h3 id="本篇同步發佈在medium平台上-medium連結httpsmediumcomjerrywu_3165sql-server-microsoft-sql-server-error-18456-1705b80187fb">本篇同步發佈在Medium平台上 <a href="https://medium.com/@jerrywu_3165/sql-server-microsoft-sql-server-error-18456-1705b80187fb">Medium連結</a></h3>
-<p>第一次安裝完Microsoft SQL Server登入時可能會遇到Error 18456的問題</p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsmediumcomjerrywu_3165sql-server-microsoft-sql-server-error-18456-1705b80187fb">本篇同步發佈在 Medium 平台上 <a href="https://medium.com/@jerrywu_3165/sql-server-microsoft-sql-server-error-18456-1705b80187fb">Medium 連結</a></h3>
+<p>第一次安裝完 Microsoft SQL Server 登入時可能會遇到 Error 18456 的問題</p>
 <h3 id="發生原因">發生原因</h3>
-<p>使用SQL Server驗證，因沒有設定使用SQL Server 驗證登入，進而產生(Microsoft SQL Server, 錯誤: 18456)</p>
+<p>使用 SQL Server 驗證，因沒有設定使用 SQL Server 驗證登入，進而產生(Microsoft SQL Server, 錯誤: 18456)</p>
 <h3 id="解決方法">解決方法</h3>
 <ol>
-<li>先使用Window驗證進行登入</li>
+<li>先使用 Window 驗證進行登入</li>
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*7Lm8kMyYncCGcc7_dufgUA.png" alt=""></p>
 <ol start="2">
@@ -122,15 +122,15 @@
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2250/1*K78lV9yGmQYeH6QAc81orw.png" alt=""></p>
 <ol start="3">
-<li>選擇安全性 → 伺服器驗證區塊勾選SQL Server 及 Windows驗證模式(S) → 確定</li>
+<li>選擇安全性 → 伺服器驗證區塊勾選 SQL Server 及 Windows 驗證模式(S) → 確定</li>
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*eSIdFI8MEQEjgkkzN7SCBw.png" alt=""></p>
 <ol start="4">
-<li>會跳出此提示訊息，必須重啟SQL Server Service後上述的設定才會生效</li>
+<li>會跳出此提示訊息，必須重啟 SQL Server Service 後上述的設定才會生效</li>
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*xk22dPRILEb4y0YjpLpS9w.png" alt=""></p>
 <ol start="5">
-<li>在重啟服務之前我們先確認SQL Server登入帳號是否有啟用，安全性 → 找到要登入的帳號名稱 → 點擊右鍵選擇[屬性]</li>
+<li>在重啟服務之前我們先確認 SQL Server 登入帳號是否有啟用，安全性 → 找到要登入的帳號名稱 → 點擊右鍵選擇[屬性]</li>
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*Mc8pLXdfDtyNcnycYK88Pg.png" alt=""></p>
 <ol start="6">
@@ -142,12 +142,12 @@
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*bzCNqsUxjl5JLZx-7XiTAQ.png" alt=""></p>
 <ol start="8">
-<li>點選[是]，便會開始重啟SQL Server Service</li>
+<li>點選[是]，便會開始重啟 SQL Server Service</li>
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*b7Im35Fyqan9WajhmrG1Jw.png" alt=""></p>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*mMrzXF4NFt2ELm2T_jbirg.png" alt=""></p>
 <ol start="9">
-<li>完成以上流程就能使用SQL Server驗證登入啦!</li>
+<li>完成以上流程就能使用 SQL Server 驗證登入啦!</li>
 </ol>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*qZwtj6y9ZoizJzdO9tMo-w.png" alt=""></p>
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*21bddOp1jncMcwG-VipHFQ.png" alt=""></p>

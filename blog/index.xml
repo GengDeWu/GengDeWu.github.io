@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 16 Jan 2021 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 03 Mar 2021 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(Security)WebGoat 安裝 &amp; 漏洞演練</title>
+      <link>https://GengDeWu.github.io/blog/security_webgoat/</link>
+      <pubDate>Wed, 03 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/security_webgoat/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結  前言 WebGoat 是專門用來練習漏洞的 Web 應用程式，所以裡面的網頁都是漏洞百出的，因此官方也建議在使用 WebGoat 練習時，最好是把網路中斷，以免有心人士利用，讓使用者反而變成受害者。</description>
+    </item>
     
     <item>
       <title>(SQL) 爲什麼參數化查詢可以防止SQL Injection/如何觀看Execution Plan上的差異</title>
@@ -116,7 +125,7 @@
       <pubDate>Tue, 08 Sep 2020 21:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/blog/sql_server_error_18456/</guid>
-      <description>本篇同步發佈在Medium平台上 Medium連結 第一次安裝完Microsoft SQL Server登入時可能會遇到Error 18456的問題</description>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結 第一次安裝完 Microsoft SQL Server 登入時可能會遇到 Error 18456 的問題</description>
     </item>
     
     <item>

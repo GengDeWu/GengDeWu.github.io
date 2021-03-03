@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 16 Jan 2021 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 03 Mar 2021 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SQL Injection</title>
+      <link>https://GengDeWu.github.io/tags/sql-injection/</link>
+      <pubDate>Wed, 03 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/sql-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebGoat</title>
+      <link>https://GengDeWu.github.io/tags/webgoat/</link>
+      <pubDate>Wed, 03 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/webgoat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XSS</title>
+      <link>https://GengDeWu.github.io/tags/xss/</link>
+      <pubDate>Wed, 03 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/xss/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Execution Plan</title>
@@ -26,15 +53,6 @@
       <pubDate>Sat, 16 Jan 2021 23:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/tags/parameterized-query/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL Injection</title>
-      <link>https://GengDeWu.github.io/tags/sql-injection/</link>
-      <pubDate>Sat, 16 Jan 2021 23:00:00 +0800</pubDate>
-      
-      <guid>https://GengDeWu.github.io/tags/sql-injection/</guid>
       <description></description>
     </item>
     
