@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Demo SQL Server UNION ALL / UNION differences">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(SQL Server) UNION ALL / UNION differences</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>30 April 2021</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/sql-server"
+          class="text-primary">S q l server</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/2000/1*S0RYIWpxL7w4RwwYN2FBNg.png" alt=""></p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsjerrywu-3165mediumcomsql-server-union-all-union-differences-76e45e27bd8a">本篇同步發佈在 Medium 平台上 <a href="https://jerrywu-3165.medium.com/sql-server-union-all-union-differences-76e45e27bd8a">Medium 連結</a></h3>
+<hr>
+<p>UNION 為集合運算中的其中一種，簡單來說它就是將兩個以上的 SQL 指令產生的結果進行合併。以下將利用 SQL Server 示範 UNION ALL 以及 UNION 兩個指令，並比較兩者之間的差異 !</p>
+<hr>
+<h3 id="首先先產出以下兩張資料表並-insert-一些資料如下-">首先，先產出以下兩張資料表並 Insert 一些資料，如下 :</h3>
+<ul>
+<li>
+<p>資料表[Employee] 欄位[EmpID]、[EmpName]</p>
+</li>
+<li>
+<p>資料表[Customer] 欄位[CustID]、[CustName]</p>
+</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/1400/1*H77DDVfpFP38r-FueFymYg.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/1400/1*6MWYhMMBMSWHPwX6vkbsjA.png" alt=""></p>
+<hr>
+<h3 id="union-all">UNION ALL</h3>
+<p><img src="https://cdn-images-1.medium.com/max/1400/1*sd-sBhnEkW4hkzkeipjbcw.png" alt=""></p>
+<p>UNION ALL 結果為 : Jerry, Allen, Tony, Nina, Jerry, Lisa, James.
+簡單來說就是將兩張資料表的欄位[EmpName]、[CustName]合併後直接輸出。</p>
+<hr>
+<h3 id="union">UNION</h3>
+<p><img src="https://cdn-images-1.medium.com/max/1400/1*rLAcPOhbFLlTHFnXTZ4CcQ.png" alt=""></p>
+<p>UNION 結果為 : Allen, James, Jerry, Lisa, Nina, Tony.
+UNION 剔除了兩張資料表欄位[EmpName]、[CustName]重複的資料，並且最終的資料已經被排序</p>
+<hr>
+<p>由於 UNION 將會剔除重複的資料，可以理解為先將資料合併後再執行 DISTINCT 剔除重複資料，要達此目的就需先將資料進行排序。
+因此採用 UNION 前需思考剔除重複資料是否為必要的條件，尤其是在處理大量資料時，將會造成 Memory、I/O 消耗的問題，若沒必要請使用 UNION ALL 即可 !</p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>

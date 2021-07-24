@@ -6,10 +6,19 @@
     <description>Recent content in SQL Server on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 16 Jan 2021 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Apr 2021 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(SQL Server) UNION ALL / UNION differences</title>
+      <link>https://GengDeWu.github.io/blog/sql_server_union_all_union/</link>
+      <pubDate>Fri, 30 Apr 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/sql_server_union_all_union/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結  UNION 為集合運算中的其中一種，簡單來說它就是將兩個以上的 SQL 指令產生的結果進行合併。以下將利用 SQL Server 示範 UNION ALL 以及 UNION 兩個指令，並比較兩者之間的差異 !</description>
+    </item>
     
     <item>
       <title>(SQL) 爲什麼參數化查詢可以防止SQL Injection/如何觀看Execution Plan上的差異</title>
