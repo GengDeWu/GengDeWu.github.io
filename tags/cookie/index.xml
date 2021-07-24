@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cookie on Jerry&#39;s Blog</title>
+    <link>https://GengDeWu.github.io/tags/cookie/</link>
+    <description>Recent content in Cookie on Jerry&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 27 Mar 2021 22:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://GengDeWu.github.io/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(Security) 使用HTTP Header來保護你的網站吧 !</title>
+      <link>https://GengDeWu.github.io/blog/security_http_header_protect_your_website/</link>
+      <pubDate>Sat, 27 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/blog/security_http_header_protect_your_website/</guid>
+      <description>本篇同步發佈在 Medium 平台上 Medium 連結  在 HTTP 通訊協定的內容中， Request 和 Response 有標準化內容格式，並且都包含了 Header 和 Body。在簡單了解 Header 和 Body 後，將介紹幾個可以用來保護你網站的 HTTP Header！</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Jerry&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹幾個HTTP Header來保護你的網站">
+  <meta name="author" content="JerryWu">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://GengDeWu.github.io">
+        <span class="text-body">Jerry's Blog</span>
+        </a>
+      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://GengDeWu.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <h2>(Security) 使用HTTP Header來保護你的網站吧 !</h2>
+        <div class="mb-3 post-meta">
+          <span>By JerryWu</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>27 March 2021</span>
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/security"
+          class="text-primary">Security</a>
+        
+          
+        </div>
+        
+        <div class="content mb-5">
+          <p><img src="https://cdn-images-1.medium.com/max/1400/1*oiH-XYSyliCNT_tRA9q3RA.png" alt=""></p>
+<h3 id="本篇同步發佈在-medium-平台上-medium-連結httpsjerrywu-3165mediumcomsecurity-e4bdbfe794a8http-headere4be86e4bf9de8adb7e4bda0e79a84e7b6b2e7ab99e590a7-8383d7465388">本篇同步發佈在 Medium 平台上 <a href="https://jerrywu-3165.medium.com/security-%E4%BD%BF%E7%94%A8http-header%E4%BE%86%E4%BF%9D%E8%AD%B7%E4%BD%A0%E7%9A%84%E7%B6%B2%E7%AB%99%E5%90%A7-8383d7465388">Medium 連結</a></h3>
+<hr>
+<p>在 HTTP 通訊協定的內容中， Request 和 Response 有標準化內容格式，並且都包含了 Header 和 Body。在簡單了解 Header 和 Body 後，將介紹幾個可以用來保護你網站的 HTTP Header！</p>
+<hr>
+<h2 id="header">Header</h2>
+<ul>
+<li>
+<p>大部分會包含：</p>
+<ol>
+<li>
+<p>URL</p>
+</li>
+<li>
+<p>Http Request Method 請求方法 <strong>(Get、Post、DELETE、PUT…等)</strong></p>
+</li>
+<li>
+<p>Http Status Code 狀態碼 <strong>(1xx ：稍等、2xx：成功、3xx：重新導向、4xx：Client 端錯誤、5xx：Service 端錯誤)</strong></p>
+</li>
+</ol>
+</li>
+<li>
+<p>其他額外資訊也會放在這裡，例如：Client-ID、User-Agent、Authorization …等。</p>
+</li>
+</ul>
+<h2 id="body">Body</h2>
+<ul>
+<li>主要傳遞的訊息內容，其格式可能為 JSON、XML…等，但也可能是沒有內容的。</li>
+</ul>
+<hr>
+<h2 id="x-frame-options">X-Frame-Options</h2>
+<p>X-Frame-Options 可以用來避免駭客在某個惡意網站當中，使用 iframe 嵌入你的網站，進而做到 Clickjacking 攻擊。</p>
+<p>Clickjacking 是什麼呢？顧名思義就是攔截你的點擊來做壞事。簡單來說就是掛羊頭買狗肉，網站的樣貌是一個心理測驗網站，但是當你點擊網站內的開始測驗按鈕時，其實是到駭客的粉絲頁按讚。</p>
+<p>以下為 X-Frame-Options 的各種設定：</p>
+<ul>
+<li>
+<p><strong>DENY</strong>— 禁止任何人嵌入這頁網頁</p>
+</li>
+<li>
+<p><strong>SAMEORIGIN</strong> — 如果你想要寬鬆一點就可以使用 same origin ，那麼就會依據 DOM 的同源政策來判斷要嵌入你這頁的網站是否與你的網站同源</p>
+</li>
+<li>
+<p><strong>ALLOW-FROM https://某個網站.com/</strong>— 設定白名單，只允許某網站嵌入你的網頁</p>
+</li>
+</ul>
+<h2 id="x-xss-protection">X-XSS-Protection</h2>
+<p>設定為：X-Xss-Protection: 1; mode=block</p>
+<p>這個欄位的值設定為 1，它的模式設定為 block，便能讓瀏覽器預設的 XSS 防護生效。</p>
+<h2 id="x-content-type-options">X-Content-Type-Options</h2>
+<p>設定為：X-Content-Type-Options: nosniff</p>
+<p>X-Content-Type-Options 設定為 nosniff (不要探測的意思)，來避免 MIME sniffing 攻擊。</p>
+<p>什麼是 MIME sniffing 攻擊呢？</p>
+<p>MIME 的全名是 Multipurpose Internet Mail Extensions，最初是用於電子郵件方面，後來被 HTTP 採用，用來描述資源的類型，例如：圖片、影片、HTML 檔案…等。</p>
+<p>假設駭客在部落格上寫一篇美食文章，並且上傳一張假的圖片，而這張假的圖片雖然被命名為 .jpg 但實際上是 HTML 程式碼，裡面含有一些惡意的攻擊程式，當另一位使用者看到駭客這篇美食文章，便會到 Server 端下載這張 .jpg，到那位使用者的瀏覽器作呈現，那麼<strong>攻擊的時間點就發生在瀏覽器試圖探測這個檔案的類型</strong>，瀏覽器會發現這個檔案其實不是圖片，它是 HTML 程式碼，瀏覽器一旦發現它其實是 HTML 程式碼時，瀏覽器就會對這個 .jpg 以 HTML 的方式去執行，因此內涵的惡意程式碼就會在使用者的瀏覽器執行並造成攻擊。</p>
+<p><strong>駭客就是利用瀏覽器會探測檔案資料類型的這個特性來達到他攻擊的目的。</strong></p>
+<h2 id="access-control-allow-origin">Access-Control-Allow-Origin</h2>
+<p>根據 Same Origin Policy，只有相同來源的資源才可以相互存取，但現今網站功能愈來愈複雜，有時需要允許跨來源資源的存取。此時，便要好好設定 Access-Control-Allow-Origin。</p>
+<p>設定為：</p>
+<p>1.Access-Control-Allow-Origin：https://demo.com</p>
+<p>你可以設定網站的網址，允許它來存取。</p>
+<p>2.Access-Control-Allow-Credentials: true</p>
+<p>也可以允許它是不是能夠帶相對應的 Cookie 來到你的網站，如果允許的話就把 Credentials 設定為 true。</p>
+<p>3.Access-Control-Allow-Methods: GET</p>
+<p>也可以設定存取你的網站時，使用的 HTTP Request 是哪一個動詞，這邊的範例是 GET。</p>
+<h2 id="https-strict-transport-security">HTTPS Strict Transport Security</h2>
+<p>確保你的網站都在安全的 HTTPS 下進行操作．這個設定會通知瀏覽器，此網站禁止使用 HTTP 方式載入，瀏覽器應該要把所有使用 HTTP 的請求全部替換成 HTTPS 請求。</p>
+<p>以下為一個設定的範例：</p>
+<p>Strict-Transport-Security: max-age=31536000; includeSubDomains</p>
+<p>它可以設定一個有效期限，在這個有效期限之內你所有網站的 HTTP 請求，都會使用 HTTPS 來進行；</p>
+<p>此外如果你的子網域也要套用這個設定，那就可以加上 includeSubDomains，就是包含子網域的意思。</p>
+<hr>
+<h2 id="保護-cookie-的-header"><strong>保護 Cookie 的 Header</strong></h2>
+<h3 id="httponly"><strong>HttpOnly</strong></h3>
+<p>設定了 HttpOnly 的 Cookie 無法被客戶端的 JavaScript 程式碼存取，避免潛在的安全問題。</p>
+<h3 id="secure"><strong>Secure</strong></h3>
+<p>設定了 Secure 的 Cookie 只能在使用 HTTPS 的情況下被傳輸。</p>
+<hr>
+<h2 id="額外補充">額外補充</h2>
+<h2 id="chrome-90-網址列將預設使用-https-了"><strong>Chrome 90 網址列將預設使用 https:// 了</strong></h2>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*_wEO6_jLJc24_RUcq_W6sg.gif" alt=""></p>
+<p>當 Chrome 預設使用 HTTPS 協定，對於支援 HTTPS 的網站，便可直接連接到 HTTPS 端點，而不需要從 http:// 重新導向到 https://；</p>
+<p>至於尚未支援 HTTPS 的網站，在 HTTPS 嘗試失敗後，包括名稱不符或是 DNS 解析失敗等連接錯誤，Chrome 便會回退使用 HTTP。</p>
+<p>此調整除了明顯改善安全性和隱私性之外，這個更改也能提高支援 HTTPS 網站的初始載入速度。</p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gengdewu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://GengDeWu.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
+
+<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://GengDeWu.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-167118505-1', 'auto');
+  ga('send', 'pageview');
+</script>
+        <script type="text/javascript">
+            var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+            if (links[i].hostname != window.location.hostname) {
+                links[i].target = '_blank';
+            }
+        }
+        </script>
+    </body>
+</html>
