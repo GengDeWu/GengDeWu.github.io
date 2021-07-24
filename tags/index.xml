@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Jerry&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 03 Mar 2021 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Mar 2021 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://GengDeWu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cookie</title>
+      <link>https://GengDeWu.github.io/tags/cookie/</link>
+      <pubDate>Sat, 27 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/cookie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Header</title>
+      <link>https://GengDeWu.github.io/tags/header/</link>
+      <pubDate>Sat, 27 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/header/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP Header</title>
+      <link>https://GengDeWu.github.io/tags/http-header/</link>
+      <pubDate>Sat, 27 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/http-header/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XSS</title>
+      <link>https://GengDeWu.github.io/tags/xss/</link>
+      <pubDate>Sat, 27 Mar 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://GengDeWu.github.io/tags/xss/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SQL Injection</title>
@@ -26,15 +62,6 @@
       <pubDate>Wed, 03 Mar 2021 22:00:00 +0800</pubDate>
       
       <guid>https://GengDeWu.github.io/tags/webgoat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>XSS</title>
-      <link>https://GengDeWu.github.io/tags/xss/</link>
-      <pubDate>Wed, 03 Mar 2021 22:00:00 +0800</pubDate>
-      
-      <guid>https://GengDeWu.github.io/tags/xss/</guid>
       <description></description>
     </item>
     

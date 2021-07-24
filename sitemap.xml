@@ -3,27 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://GengDeWu.github.io/blog/security_webgoat/</loc>
-    <lastmod>2021-03-03T22:00:00+08:00</lastmod>
+    <loc>https://GengDeWu.github.io/blog/security_http_header_protect_your_website/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/blog/</loc>
-    <lastmod>2021-03-03T22:00:00+08:00</lastmod>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/categories/</loc>
-    <lastmod>2021-03-03T22:00:00+08:00</lastmod>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/cookie/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/header/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/http-header/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/</loc>
-    <lastmod>2021-03-03T22:00:00+08:00</lastmod>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://GengDeWu.github.io/categories/security/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/tags/xss/</loc>
+    <lastmod>2021-03-27T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://GengDeWu.github.io/blog/security_webgoat/</loc>
     <lastmod>2021-03-03T22:00:00+08:00</lastmod>
   </url>
   
@@ -33,17 +63,7 @@
   </url>
   
   <url>
-    <loc>https://GengDeWu.github.io/tags/</loc>
-    <lastmod>2021-03-03T22:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://GengDeWu.github.io/tags/webgoat/</loc>
-    <lastmod>2021-03-03T22:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://GengDeWu.github.io/tags/xss/</loc>
     <lastmod>2021-03-03T22:00:00+08:00</lastmod>
   </url>
   
