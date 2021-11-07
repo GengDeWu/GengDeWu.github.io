@@ -1,523 +1,785 @@
 <!DOCTYPE html>
-<html lang="zh-tw"><head>
-  <meta charset="utf-8">
-  <title>Jerry&#39;s Blog</title>
+<html lang="zh-tw">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jerry&#39;s Blog</title>
 
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A software engineer world.">
-  <meta name="author" content="JerryWu">
-  <meta name="generator" content="Hugo 0.70.0" />
+    <!-- mobile responsive meta -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="A software engineer world." />
+    <meta name="author" content="JerryWu" />
+    <meta name="generator" content="Hugo 0.70.0" />
+    <meta
+      name="google-site-verification"
+      content="ub8BkFGGHSLIiyYnd7OqZDZQnWtXOT3gE8sPm_vKmFs"
+    />
 
-  <!-- plugins -->
-  
-  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css ">
-  
-  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/slick/slick.css ">
-  
-  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css ">
-  
-  <link rel="stylesheet" href="https://GengDeWu.github.io/plugins/venobox/venobox.css ">
-  
+    <!-- plugins -->
 
-  <!-- Main Stylesheet -->
-  
-  <link rel="stylesheet" href="https://GengDeWu.github.io/scss/style.min.css" media="screen">
+    <link
+      rel="stylesheet"
+      href="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.css "
+    />
 
-  <!--Favicon-->
-  <link rel="shortcut icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
-  <link rel="icon" href="https://GengDeWu.github.io/images/favicon.png " type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://GengDeWu.github.io/plugins/slick/slick.css "
+    />
 
-</head><body>
-<!-- preloader start -->
-<div class="preloader">
-  
-</div>
-<!-- preloader end -->
-<!-- navigation -->
-<header class="navigation">
-  <div class="container">
-    
-    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
-      <a class="navbar-brand" href="https://GengDeWu.github.io">
-        <span class="text-body">Jerry's Blog</span>
-        </a>
-      <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
-        
-      </a>
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-        <i class="ti-menu h3"></i>
-      </button>
+    <link
+      rel="stylesheet"
+      href="https://GengDeWu.github.io/plugins/themify-icons/themify-icons.css "
+    />
 
-      <div class="collapse navbar-collapse text-center" id="navigation">
-        
+    <link
+      rel="stylesheet"
+      href="https://GengDeWu.github.io/plugins/venobox/venobox.css "
+    />
 
-        
+    <!-- Main Stylesheet -->
 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
-          </li>
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://GengDeWu.github.io/about">About</a>
-          </li>
-          
-          
-        </ul>
+    <link
+      rel="stylesheet"
+      href="https://GengDeWu.github.io/scss/style.min.css"
+      media="screen"
+    />
 
-        
-        <!-- search -->
-        <div class="search px-4">
-          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
-          <div class="search-wrapper">
-            <form action="https://GengDeWu.github.io/search" class="h-100">
-              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
-            </form>
-            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+    <!--Favicon-->
+    <link
+      rel="shortcut icon"
+      href="https://GengDeWu.github.io/images/favicon.png "
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="https://GengDeWu.github.io/images/favicon.png "
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- preloader start -->
+    <div class="preloader"></div>
+    <!-- preloader end -->
+    <!-- navigation -->
+    <header class="navigation">
+      <div class="container">
+        <nav
+          class="
+            navbar navbar-expand-lg navbar-white
+            bg-transparent
+            border-bottom
+          "
+        >
+          <a class="navbar-brand" href="https://GengDeWu.github.io">
+            <span class="text-body">Jerry's Blog</span>
+          </a>
+          <a class="navbar-brand mobile-view" href="https://GengDeWu.github.io">
+          </a>
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navigation"
+          >
+            <i class="ti-menu h3"></i>
+          </button>
+
+          <div class="collapse navbar-collapse text-center" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://GengDeWu.github.io"> Home </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="https://GengDeWu.github.io/about"
+                  >About</a
+                >
+              </li>
+            </ul>
+
+            <!-- search -->
+            <div class="search px-4">
+              <button id="searchOpen" class="search-btn">
+                <i class="ti-search"></i>
+              </button>
+              <div class="search-wrapper">
+                <form action="https://GengDeWu.github.io/search" class="h-100">
+                  <input
+                    class="search-box px-4"
+                    id="search-query"
+                    name="s"
+                    type="search"
+                    placeholder="Type & Hit Enter..."
+                  />
+                </form>
+                <button id="searchClose" class="search-close">
+                  <i class="ti-close text-dark"></i>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        
-
-        
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-<!-- /navigation -->
+    </header>
+    <!-- /navigation -->
 
-
-<section class="section-sm">
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-lg-4">
-  
-  <div class="widget">
-    
-    <h4 class="widget-title">About Me</h4>
-    
-    <img src="https://GengDeWu.github.io/images/JerryWu-Picture.jpg" alt=""
-      class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-    
-    <p>A software engineer world.</p>
-    <a href="https://GengDeWu.github.io/about/" class="btn btn-outline-primary">Know More</a>
-    
-  </div>
-  
-  <div class="widget">
-    <h4 class="widget-title">Category</h4>
-    <ul class="list-unstyled">
-      <li><a
-          href="/categories/csharp">Csharp</a>
-      </li>
-      <li><a
-          href="/categories/hugo">Hugo</a>
-      </li>
-      <li><a
-          href="/categories/ifttt">Ifttt</a>
-      </li>
-      <li><a
-          href="/categories/javascript">Javascript</a>
-      </li>
-      <li><a
-          href="/categories/jenkins">Jenkins</a>
-      </li>
-      <li><a
-          href="/categories/parameterized-query">Parameterized query</a>
-      </li>
-      <li><a
-          href="/categories/python">Python</a>
-      </li>
-      <li><a
-          href="/categories/security">Security</a>
-      </li>
-      <li><a
-          href="/categories/sql-server">Sql server</a>
-      </li>
-      <li><a
-          href="/categories/windows-service">Windows service</a>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="widget">
-    <h4 class="widget-title">Tag</h4>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/call-stack">Call stack</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/callback-queue">Callback queue</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/closure">Closure</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/cookie">Cookie</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/debug">Debug</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/deep-copy">Deep copy</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/event-loop">Event loop</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/execution-plan">Execution plan</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/git">Git</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/github">Github</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/header">Header</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/hoisting">Hoisting</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/http-header">Http header</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/hugo">Hugo</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/ifttt">Ifttt</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/iterator-pattern">Iterator pattern</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/javascript">Javascript</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/jenkins">Jenkins</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/line-notify">Line notify</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/lodash">Lodash</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/msbuild">Msbuild</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/parameterized-query">Parameterized query</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/pass-by-reference">Pass by reference</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/pass-by-sharing">Pass by sharing</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/pass-by-value">Pass by value</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/pytest">Pytest</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/scope">Scope</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/shallow-copy">Shallow copy</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/smtp">Smtp</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/sql-injection">Sql injection</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/sql-server">Sql server</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/string">String</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/stringbuilder">Stringbuilder</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/svn">Svn</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/unittest">Unittest</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/visual-code-grepper">Visual code grepper</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/webgoat">Webgoat</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/windows-service">Windows service</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/xss">Xss</a></li>
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="/tags/yield">Yield</a></li>
-    </ul>
-  </div>
-  
-  <div class="widget">
-    <h4 class="widget-title">Social</h4>
-    <ul class="list-inline social-links">
-      
-      <li class="list-inline-item"><a href="https://github.com/GengDeWu"><i class="ti-github"></i></a></li>
-      
-    </ul>
-  </div>
-  
-  
-</div>
-
-      
-      <div class="col-lg-8 mb-5 mb-lg-0">
+    <section class="section-sm">
+      <div class="container">
         <div class="row">
-          
-          
-          <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="https://GengDeWu.github.io/blog/sql_server_union_all_union/" class="h3 d-block my-3">(SQL Server) UNION ALL / UNION differences</a>
-                <div class="mb-3 post-meta">
-                  <span>By JerryWu</span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>2021-04-30</span>
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  
-                <a href="/categories/sql-server"
-                  class="text-primary">S q l server</a>
-                
-                  
-                </div>
-                <p class="card-text">Demo SQL Server UNION ALL / UNION differences</p>
-                <a href="https://GengDeWu.github.io/blog/sql_server_union_all_union/" class="btn btn-outline-primary">read more</a>
-              </div>
-            </article>
+          <div class="col-lg-4">
+            <div class="widget">
+              <h4 class="widget-title">About Me</h4>
+
+              <img
+                src="https://GengDeWu.github.io/images/JerryWu-Picture.jpg"
+                alt=""
+                class="
+                  img-fluid
+                  author-thumb-sm
+                  d-block
+                  mx-auto
+                  rounded-circle
+                  mb-4
+                "
+              />
+
+              <p>A software engineer world.</p>
+              <a
+                href="https://GengDeWu.github.io/about/"
+                class="btn btn-outline-primary"
+                >Know More</a
+              >
+            </div>
+
+            <div class="widget">
+              <h4 class="widget-title">Category</h4>
+              <ul class="list-unstyled">
+                <li><a href="/categories/csharp">Csharp</a></li>
+                <li><a href="/categories/hugo">Hugo</a></li>
+                <li><a href="/categories/ifttt">Ifttt</a></li>
+                <li><a href="/categories/javascript">Javascript</a></li>
+                <li><a href="/categories/jenkins">Jenkins</a></li>
+                <li>
+                  <a href="/categories/parameterized-query"
+                    >Parameterized query</a
+                  >
+                </li>
+                <li><a href="/categories/python">Python</a></li>
+                <li><a href="/categories/security">Security</a></li>
+                <li><a href="/categories/sql-server">Sql server</a></li>
+                <li>
+                  <a href="/categories/windows-service">Windows service</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget">
+              <h4 class="widget-title">Tag</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/call-stack"
+                    >Call stack</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/callback-queue"
+                    >Callback queue</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/closure"
+                    >Closure</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/cookie"
+                    >Cookie</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/debug"
+                    >Debug</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/deep-copy"
+                    >Deep copy</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/event-loop"
+                    >Event loop</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/execution-plan"
+                    >Execution plan</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a class="d-block p-2 bg-primary text-white" href="/tags/git"
+                    >Git</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/github"
+                    >Github</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/header"
+                    >Header</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/hoisting"
+                    >Hoisting</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/http-header"
+                    >Http header</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a class="d-block p-2 bg-primary text-white" href="/tags/hugo"
+                    >Hugo</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/ifttt"
+                    >Ifttt</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/iterator-pattern"
+                    >Iterator pattern</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/javascript"
+                    >Javascript</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/jenkins"
+                    >Jenkins</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/line-notify"
+                    >Line notify</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/lodash"
+                    >Lodash</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/msbuild"
+                    >Msbuild</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/parameterized-query"
+                    >Parameterized query</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/pass-by-reference"
+                    >Pass by reference</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/pass-by-sharing"
+                    >Pass by sharing</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/pass-by-value"
+                    >Pass by value</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/pytest"
+                    >Pytest</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/scope"
+                    >Scope</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/shallow-copy"
+                    >Shallow copy</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a class="d-block p-2 bg-primary text-white" href="/tags/smtp"
+                    >Smtp</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/sql-injection"
+                    >Sql injection</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/sql-server"
+                    >Sql server</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/string"
+                    >String</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/stringbuilder"
+                    >Stringbuilder</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a class="d-block p-2 bg-primary text-white" href="/tags/svn"
+                    >Svn</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/unittest"
+                    >Unittest</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/visual-code-grepper"
+                    >Visual code grepper</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/webgoat"
+                    >Webgoat</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/windows-service"
+                    >Windows service</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a class="d-block p-2 bg-primary text-white" href="/tags/xss"
+                    >Xss</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="d-block p-2 bg-primary text-white"
+                    href="/tags/yield"
+                    >Yield</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget">
+              <h4 class="widget-title">Social</h4>
+              <ul class="list-inline social-links">
+                <li class="list-inline-item">
+                  <a href="https://github.com/GengDeWu"
+                    ><i class="ti-github"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
           </div>
-          
-          <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="https://GengDeWu.github.io/blog/security_http_header_protect_your_website/" class="h3 d-block my-3">(Security) 使用HTTP Header來保護你的網站吧 !</a>
-                <div class="mb-3 post-meta">
-                  <span>By JerryWu</span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>2021-03-27</span>
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  
-                <a href="/categories/security"
-                  class="text-primary">Security</a>
-                
-                  
-                </div>
-                <p class="card-text">介紹幾個HTTP Header來保護你的網站</p>
-                <a href="https://GengDeWu.github.io/blog/security_http_header_protect_your_website/" class="btn btn-outline-primary">read more</a>
+
+          <div class="col-lg-8 mb-5 mb-lg-0">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <article class="card">
+                  <div class="card-body px-0">
+                    <a
+                      href="https://GengDeWu.github.io/blog/sql_server_union_all_union/"
+                      class="h3 d-block my-3"
+                      >(SQL Server) UNION ALL / UNION differences</a
+                    >
+                    <div class="mb-3 post-meta">
+                      <span>By JerryWu</span>
+
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+                      <span>2021-04-30</span>
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+
+                      <a href="/categories/sql-server" class="text-primary"
+                        >S q l server</a
+                      >
+                    </div>
+                    <p class="card-text">
+                      Demo SQL Server UNION ALL / UNION differences
+                    </p>
+                    <a
+                      href="https://GengDeWu.github.io/blog/sql_server_union_all_union/"
+                      class="btn btn-outline-primary"
+                      >read more</a
+                    >
+                  </div>
+                </article>
               </div>
-            </article>
-          </div>
-          
-          <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="https://GengDeWu.github.io/blog/security_webgoat/" class="h3 d-block my-3">(Security)WebGoat 安裝 &amp; 漏洞演練</a>
-                <div class="mb-3 post-meta">
-                  <span>By JerryWu</span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>2021-03-03</span>
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  
-                <a href="/categories/security"
-                  class="text-primary">Security</a>
-                
-                  
-                </div>
-                <p class="card-text">介紹WebGoat安裝方式以及漏洞演練</p>
-                <a href="https://GengDeWu.github.io/blog/security_webgoat/" class="btn btn-outline-primary">read more</a>
+
+              <div class="col-md-6 mb-4">
+                <article class="card">
+                  <div class="card-body px-0">
+                    <a
+                      href="https://GengDeWu.github.io/blog/security_http_header_protect_your_website/"
+                      class="h3 d-block my-3"
+                      >(Security) 使用HTTP Header來保護你的網站吧 !</a
+                    >
+                    <div class="mb-3 post-meta">
+                      <span>By JerryWu</span>
+
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+                      <span>2021-03-27</span>
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+
+                      <a href="/categories/security" class="text-primary"
+                        >Security</a
+                      >
+                    </div>
+                    <p class="card-text">介紹幾個HTTP Header來保護你的網站</p>
+                    <a
+                      href="https://GengDeWu.github.io/blog/security_http_header_protect_your_website/"
+                      class="btn btn-outline-primary"
+                      >read more</a
+                    >
+                  </div>
+                </article>
               </div>
-            </article>
-          </div>
-          
-          <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="https://GengDeWu.github.io/blog/sql_server_sql_injection/" class="h3 d-block my-3">(SQL) 爲什麼參數化查詢可以防止SQL Injection/如何觀看Execution Plan上的差異</a>
-                <div class="mb-3 post-meta">
-                  <span>By JerryWu</span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>2021-01-16</span>
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  
-                <a href="/categories/parameterized-query"
-                  class="text-primary">Parameterized query</a>
-                
-                  
-                </div>
-                <p class="card-text">介紹爲什麼參數化查詢可以防止SQL Injection以及如何觀看Execution Plan上的差異</p>
-                <a href="https://GengDeWu.github.io/blog/sql_server_sql_injection/" class="btn btn-outline-primary">read more</a>
+
+              <div class="col-md-6 mb-4">
+                <article class="card">
+                  <div class="card-body px-0">
+                    <a
+                      href="https://GengDeWu.github.io/blog/security_webgoat/"
+                      class="h3 d-block my-3"
+                      >(Security)WebGoat 安裝 &amp; 漏洞演練</a
+                    >
+                    <div class="mb-3 post-meta">
+                      <span>By JerryWu</span>
+
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+                      <span>2021-03-03</span>
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+
+                      <a href="/categories/security" class="text-primary"
+                        >Security</a
+                      >
+                    </div>
+                    <p class="card-text">介紹WebGoat安裝方式以及漏洞演練</p>
+                    <a
+                      href="https://GengDeWu.github.io/blog/security_webgoat/"
+                      class="btn btn-outline-primary"
+                      >read more</a
+                    >
+                  </div>
+                </article>
               </div>
-            </article>
-          </div>
-          
-          <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="https://GengDeWu.github.io/blog/python_if_name_equal_main/" class="h3 d-block my-3">(Python)What is if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo; in Python ?</a>
-                <div class="mb-3 post-meta">
-                  <span>By JerryWu</span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>2021-01-06</span>
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  
-                <a href="/categories/python"
-                  class="text-primary">Python</a>
-                
-                  
-                </div>
-                <p class="card-text">介紹 What is if __name__ == &#39;__main__&#39; in Python</p>
-                <a href="https://GengDeWu.github.io/blog/python_if_name_equal_main/" class="btn btn-outline-primary">read more</a>
+
+              <div class="col-md-6 mb-4">
+                <article class="card">
+                  <div class="card-body px-0">
+                    <a
+                      href="https://GengDeWu.github.io/blog/sql_server_sql_injection/"
+                      class="h3 d-block my-3"
+                      >(SQL) 爲什麼參數化查詢可以防止SQL
+                      Injection/如何觀看Execution Plan上的差異</a
+                    >
+                    <div class="mb-3 post-meta">
+                      <span>By JerryWu</span>
+
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+                      <span>2021-01-16</span>
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+
+                      <a
+                        href="/categories/parameterized-query"
+                        class="text-primary"
+                        >Parameterized query</a
+                      >
+                    </div>
+                    <p class="card-text">
+                      介紹爲什麼參數化查詢可以防止SQL
+                      Injection以及如何觀看Execution Plan上的差異
+                    </p>
+                    <a
+                      href="https://GengDeWu.github.io/blog/sql_server_sql_injection/"
+                      class="btn btn-outline-primary"
+                      >read more</a
+                    >
+                  </div>
+                </article>
               </div>
-            </article>
-          </div>
-          
-          <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="https://GengDeWu.github.io/blog/c_sharp_yield_return_iterator_pattern/" class="h3 d-block my-3">(C#) Yield Return and Iterator Pattern</a>
-                <div class="mb-3 post-meta">
-                  <span>By JerryWu</span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>2020-12-28</span>
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  
-                <a href="/categories/csharp"
-                  class="text-primary">C sharp</a>
-                
-                  
-                </div>
-                <p class="card-text">介紹(C#) Yield Return and Iterator Pattern</p>
-                <a href="https://GengDeWu.github.io/blog/c_sharp_yield_return_iterator_pattern/" class="btn btn-outline-primary">read more</a>
+
+              <div class="col-md-6 mb-4">
+                <article class="card">
+                  <div class="card-body px-0">
+                    <a
+                      href="https://GengDeWu.github.io/blog/python_if_name_equal_main/"
+                      class="h3 d-block my-3"
+                      >(Python)What is if <strong>name</strong> ==
+                      &lsquo;<strong>main</strong>&rsquo; in Python ?</a
+                    >
+                    <div class="mb-3 post-meta">
+                      <span>By JerryWu</span>
+
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+                      <span>2021-01-06</span>
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+
+                      <a href="/categories/python" class="text-primary"
+                        >Python</a
+                      >
+                    </div>
+                    <p class="card-text">
+                      介紹 What is if __name__ == &#39;__main__&#39; in Python
+                    </p>
+                    <a
+                      href="https://GengDeWu.github.io/blog/python_if_name_equal_main/"
+                      class="btn btn-outline-primary"
+                      >read more</a
+                    >
+                  </div>
+                </article>
               </div>
-            </article>
+
+              <div class="col-md-6 mb-4">
+                <article class="card">
+                  <div class="card-body px-0">
+                    <a
+                      href="https://GengDeWu.github.io/blog/c_sharp_yield_return_iterator_pattern/"
+                      class="h3 d-block my-3"
+                      >(C#) Yield Return and Iterator Pattern</a
+                    >
+                    <div class="mb-3 post-meta">
+                      <span>By JerryWu</span>
+
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+                      <span>2020-12-28</span>
+                      <span
+                        class="border-bottom border-primary px-2 mx-1"
+                      ></span>
+
+                      <a href="/categories/csharp" class="text-primary"
+                        >C sharp</a
+                      >
+                    </div>
+                    <p class="card-text">
+                      介紹(C#) Yield Return and Iterator Pattern
+                    </p>
+                    <a
+                      href="https://GengDeWu.github.io/blog/c_sharp_yield_return_iterator_pattern/"
+                      class="btn btn-outline-primary"
+                      >read more</a
+                    >
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
-          
+
+          <div class="col-12 mt-5">
+            <ul class="pagination">
+              <li class="page-item">
+                <a href="/" class="page-link" aria-label="First"
+                  ><span aria-hidden="true">&laquo;&laquo;</span></a
+                >
+              </li>
+
+              <li class="page-item disabled">
+                <a class="page-link" aria-label="Previous"
+                  ><span aria-hidden="true">&laquo;</span></a
+                >
+              </li>
+
+              <li class="page-item active">
+                <a class="page-link" href="/">1</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="/page/2/">2</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="/page/3/">3</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="/page/4/">4</a>
+              </li>
+
+              <li class="page-item">
+                <a href="/page/2/" class="page-link" aria-label="Next"
+                  ><span aria-hidden="true">&raquo;</span></a
+                >
+              </li>
+
+              <li class="page-item">
+                <a href="/page/4/" class="page-link" aria-label="Last"
+                  ><span aria-hidden="true">&raquo;&raquo;</span></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      
+    </section>
 
-      
-      <div class="col-12 mt-5">
-        
+    <script>
+      var indexURL = "https://GengDeWu.github.io/index.json";
+    </script>
 
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item disabled">
-    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
+    <!-- JS Plugins -->
 
+    <script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
 
-      </div>
-    </div>
-  </div>
-</section>
+    <script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
 
+    <script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
 
+    <script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
 
+    <script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
 
-<script>
-  var indexURL = "https://GengDeWu.github.io/index.json"
-</script>
+    <script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
 
-<!-- JS Plugins -->
+    <script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
 
-<script src="https://GengDeWu.github.io/plugins/jQuery/jquery.min.js"></script>
+    <!-- Main Script -->
 
-<script src="https://GengDeWu.github.io/plugins/bootstrap/bootstrap.min.js"></script>
-
-<script src="https://GengDeWu.github.io/plugins/slick/slick.min.js"></script>
-
-<script src="https://GengDeWu.github.io/plugins/venobox/venobox.min.js"></script>
-
-<script src="https://GengDeWu.github.io/plugins/search/fuse.min.js"></script>
-
-<script src="https://GengDeWu.github.io/plugins/search/mark.js"></script>
-
-<script src="https://GengDeWu.github.io/plugins/search/search.js"></script>
-
-<!-- Main Script -->
-
-<script src="https://GengDeWu.github.io/js/script.min.js"></script>
-<!-- google analitycs -->
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-167118505-1', 'auto');
-  ga('send', 'pageview');
-</script>
-        <script type="text/javascript">
-            var links = document.links;
-        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-            if (links[i].hostname != window.location.hostname) {
-                links[i].target = '_blank';
-            }
+    <script src="https://GengDeWu.github.io/js/script.min.js"></script>
+    <!-- google analitycs -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-167118505-1", "auto");
+      ga("send", "pageview");
+    </script>
+    <script type="text/javascript">
+      var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+          links[i].target = "_blank";
         }
-        </script>
-    </body>
+      }
+    </script>
+  </body>
 </html>
